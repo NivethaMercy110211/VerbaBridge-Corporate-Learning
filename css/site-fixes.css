@@ -3910,6 +3910,9 @@ html[data-theme="dark"] body #faqAccordion .accordion-button:focus {
 
 /* Auth visual panels: center the complete message consistently. */
 .vb-auth-page .auth-visual-content {
+  width: 100% !important;
+  max-width: none !important;
+  flex: 1 1 100%;
   align-items: center;
   justify-content: center;
   text-align: center;
