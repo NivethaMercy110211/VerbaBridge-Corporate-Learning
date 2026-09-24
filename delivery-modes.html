@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Delivery Modes — VerbaBridge Corporate Learning</title>
+  <meta name="description" content="Compare VerbaBridge's corporate training delivery formats: Live Online, In-Person and Hybrid. Choose the format that works best for your organization, team size and workforce location.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css?v=3">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/footer.css?v=2">
+  <link rel="stylesheet" href="css/dark-theme.css?v=2">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <style>
+    .delivery-compare-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-2xl); padding:var(--space-6); transition:all var(--transition-base); }
+    .delivery-compare-card:hover { border-color:var(--navy); box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+    .delivery-compare-card.featured { border-color:var(--teal); }
+    .delivery-compare-card.featured .delivery-compare-badge { display:inline-flex; }
+    .delivery-compare-badge { display:none; }
+    .compare-check { color:var(--success); }
+    .compare-partial { color:var(--warning); }
+    .compare-no { color:var(--body-muted); }
+  </style>
+  <link rel="stylesheet" href="css/site-fixes.css?v=36">
+  <link rel="stylesheet" href="css/banner-motion.css?v=3">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="vb-header" id="site-header">
+  <div class="vb-container">
+    <div class="header-inner">
+      <a href="index.html" class="vb-brand" aria-label="VerbaBridge Corporate Learning">
+        <img src="assets/images/logo.png" alt="VerbaBridge Corporate Learning" class="vb-brand-img" height="48">
+      </a>
+      <nav class="vb-nav">
+        <div class="vb-nav-item">
+          <a href="index.html" class="vb-nav-link">Home <i class="ri-arrow-down-s-line" style="font-size:0.875rem;"></i></a>
+          <div class="vb-nav-dropdown">
+            <a href="index.html" class="vb-dropdown-link">Home 1</a>
+            <a href="home-2.html" class="vb-dropdown-link">Home 2</a>
+                    </div>
+        </div>
+        <a href="about.html" class="vb-nav-link">About</a>
+        <div class="vb-nav-item">
+          <a href="programs.html" class="vb-nav-link">Programs <i class="ri-arrow-down-s-line" style="font-size:0.875rem;"></i></a>
+          <div class="vb-nav-dropdown">
+            <a href="programs.html" class="vb-dropdown-link">All Programs</a>
+            <a href="program-detail.html?id=business-english" class="vb-dropdown-link">Program Detail</a>
+          </div>
+        </div>
+        <a href="delivery-modes.html" class="vb-nav-link active">Delivery</a>
+        <a href="corporate-solutions.html" class="vb-nav-link">Solutions</a>
+        <a href="case-studies.html" class="vb-nav-link">Case Studies</a>
+        <a href="contact.html" class="vb-nav-link">Contact</a>
+      </nav>
+      <div class="vb-header-actions">
+        <button class="vb-theme-toggle" data-theme-toggle><i class="ri-moon-line"></i></button>
+        <button class="vb-rtl-toggle" data-rtl-toggle><span>RTL</span></button>
+        <a href="hr-login.html" class="btn-vb btn-vb-secondary btn-vb-sm"><i class="ri-user-line"></i> HR Login</a>
+        <a href="dashboard.html" class="btn-vb btn-vb-primary btn-vb-sm"><i class="ri-dashboard-line"></i> HR Dashboard</a>
+        <button class="vb-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-label="Open menu"><i class="ri-menu-line"></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="vb-mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav class="vb-mobile-nav">
+    <div class="vmn-group">
+      <button class="vmn-group-toggle" aria-expanded="false">
+        <i class="ri-home-line"></i>
+        <span class="vmn-label">Home</span>
+        <i class="ri-arrow-down-s-line vmn-arrow"></i>
+      </button>
+      <div class="vmn-submenu">
+        <a href="index.html" class="vmn-sub-link"><i class="ri-home-4-line"></i> Home 1</a>
+        <a href="home-2.html" class="vmn-sub-link"><i class="ri-layout-line"></i> Home 2</a>
+      </div>
+    </div>
+    <a href="about.html" class="vb-mobile-nav-link"><i class="ri-information-line"></i> About</a>
+    <div class="vmn-group">
+      <button class="vmn-group-toggle" aria-expanded="false">
+        <i class="ri-book-open-line"></i>
+        <span class="vmn-label">Programs</span>
+        <i class="ri-arrow-down-s-line vmn-arrow"></i>
+      </button>
+      <div class="vmn-submenu">
+        <a href="programs.html" class="vmn-sub-link"><i class="ri-list-check"></i> All Programs</a>
+        <a href="program-detail.html?id=business-english" class="vmn-sub-link"><i class="ri-file-list-3-line"></i> Program Detail</a>
+      </div>
+    </div>
+    <a href="delivery-modes.html" class="vb-mobile-nav-link active"><i class="ri-global-line"></i> Delivery Modes</a>
+    <a href="corporate-solutions.html" class="vb-mobile-nav-link"><i class="ri-building-2-line"></i> Corporate Solutions</a>
+    <a href="case-studies.html" class="vb-mobile-nav-link"><i class="ri-bar-chart-box-line"></i> Case Studies</a>
+    <a href="contact.html" class="vb-mobile-nav-link"><i class="ri-phone-line"></i> Contact</a>
+  </nav>
+  <div class="vb-mobile-actions">
+    <a href="dashboard.html" class="btn-vb btn-vb-primary btn-vb-block"><i class="ri-dashboard-line"></i> HR Dashboard</a>
+    <a href="hr-login.html" class="btn-vb btn-vb-secondary btn-vb-block"><i class="ri-user-line"></i> HR Login</a>
+  </div>
+  <div class="vb-mobile-controls">
+    <button class="vb-theme-toggle" data-theme-toggle><i class="ri-moon-line"></i></button>
+    <button class="vb-rtl-toggle" data-rtl-toggle><span>RTL</span></button>
+  </div>
+</div>
+<div class="vb-overlay" id="mobile-overlay"></div>
+
+<!-- PAGE BANNER -->
+<section class="vb-page-banner">
+  <div class="vb-page-banner-bg" style="background-image: url('assets/images/hero/delivery.png');"></div>
+  <div class="vb-page-banner-overlay"></div>
+  <div class="vb-container">
+    <div class="vb-page-banner-content">
+      <div class="page-banner-eyebrow">How We Deliver Training</div>
+      <h1 class="page-banner-title">Flexible Training Delivery for Every Workforce</h1>
+      <p class="page-banner-desc">Live Online, In-Person and Hybrid formats designed to fit your team's locations and schedule.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THREE MODES -->
+<section class="vb-section bg-white">
+  <div class="vb-container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">Three Delivery Formats</span>
+      <h2 class="section-title">Training That Works for Your Organization</h2>
+      <p class="section-subtitle mx-auto">All three delivery formats offer live facilitator-led training — the same professional quality, adapted to different organizational needs.</p>
+    </div>
+    <div class="row g-4 delivery-formats-grid">
+      <!-- Live Online -->
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="delivery-compare-card h-100 p-0 overflow-hidden" id="online-format">
+          <div class="card-top-media">
+            <img src="assets/images/delivery/online.jpg" alt="Live Online Corporate Training Session">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="delivery-card-icon" style="margin-bottom:var(--space-3);"><i class="ri-video-line"></i></div>
+            <h2 class="delivery-compare-title" style="font-size:1.375rem; font-family:var(--font-heading); font-weight:800; color:var(--heading); margin-bottom:8px;">Live Online</h2>
+            <p class="delivery-compare-desc" style="font-size:0.9375rem; color:var(--body); line-height:1.75; margin-bottom:var(--space-4);">Instructor-led virtual training delivered via video conferencing platform. Participants join from their own location — ideal for remote and distributed teams.</p>
+            <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--body-muted); margin-bottom:12px;">Included Features</div>
+            <div class="d-flex flex-column gap-2 mb-4 flex-grow-1">
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Live facilitator-led sessions</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Interactive breakout exercises</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Digital learning materials</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Remote workforce support</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Session recordings (optional)</div>
+            </div>
+            <div style="font-size:0.8125rem; color:var(--body-muted); margin-bottom:var(--space-2);">Best for:</div>
+            <div class="d-flex flex-wrap gap-2 mb-4 delivery-best-for">
+              <span class="vb-badge badge-neutral">Remote teams</span>
+              <span class="vb-badge badge-neutral">Global workforce</span>
+              <span class="vb-badge badge-neutral">Multiple locations</span>
+            </div>
+            <div class="mt-auto">
+              <a href="contact.html?delivery=online" class="btn-vb btn-vb-secondary btn-vb-block" id="btn-delivery-online">Request Live Online Training</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- In-Person -->
+      <div class="col-lg-4 col-md-6 reveal" data-delay="60">
+        <div class="delivery-compare-card featured h-100 p-0 overflow-hidden" id="inperson-format">
+          <div class="delivery-compare-badge vb-badge badge-teal">Most Engaging</div>
+          <div class="card-top-media">
+            <img src="assets/images/delivery/in-person.jpg" alt="In-Person Corporate Training Seminar">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="delivery-card-icon" style="margin-bottom:var(--space-3);"><i class="ri-building-4-line"></i></div>
+            <h2 class="delivery-compare-title" style="font-size:1.375rem; font-family:var(--font-heading); font-weight:800; color:var(--heading); margin-bottom:8px;">In-Person</h2>
+            <p class="delivery-compare-desc" style="font-size:0.9375rem; color:var(--body); line-height:1.75; margin-bottom:var(--space-4);">Facilitator-led training at your corporate office or a suitable training venue. High-engagement format for teams in the same location — maximizes practice and interaction.</p>
+            <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--body-muted); margin-bottom:12px;">Included Features</div>
+            <div class="d-flex flex-column gap-2 mb-4 flex-grow-1">
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Live facilitator on-site</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> High-engagement group activities</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Role-play and practice sessions</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Printed and digital materials</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Whiteboard &amp; live exercises</div>
+            </div>
+            <div style="font-size:0.8125rem; color:var(--body-muted); margin-bottom:var(--space-2);">Best for:</div>
+            <div class="d-flex flex-wrap gap-2 mb-4 delivery-best-for">
+              <span class="vb-badge badge-neutral">Office-based teams</span>
+              <span class="vb-badge badge-neutral">Intensive programs</span>
+              <span class="vb-badge badge-neutral">High engagement</span>
+            </div>
+            <div class="mt-auto">
+              <a href="contact.html?delivery=inperson" class="btn-vb btn-vb-primary btn-vb-block" id="btn-delivery-inperson">Request In-Person Training</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hybrid -->
+      <div class="col-lg-4 col-md-6 reveal" data-delay="120">
+        <div class="delivery-compare-card h-100 p-0 overflow-hidden" id="hybrid-format">
+          <div class="card-top-media">
+            <img src="assets/images/delivery/hybrid.jpg" alt="Hybrid Corporate Learning Setup">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="delivery-card-icon" style="margin-bottom:var(--space-3);"><i class="ri-merge-cells-horizontal"></i></div>
+            <h2 class="delivery-compare-title" style="font-size:1.375rem; font-family:var(--font-heading); font-weight:800; color:var(--heading); margin-bottom:8px;">Hybrid</h2>
+            <p class="delivery-compare-desc" style="font-size:0.9375rem; color:var(--body); line-height:1.75; margin-bottom:var(--space-4);">Combines live online and in-person delivery within a structured training plan. Suitable for organizations with a mix of office-based and remote employees.</p>
+            <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--body-muted); margin-bottom:12px;">Included Features</div>
+            <div class="d-flex flex-column gap-2 mb-4 flex-grow-1">
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Blended online + in-person sessions</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Flexible scheduling</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Consistent learning experience</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Unified progress tracking</div>
+              <div class="info-row compare-check"><i class="ri-checkbox-circle-fill"></i> Digital and physical materials</div>
+            </div>
+            <div style="font-size:0.8125rem; color:var(--body-muted); margin-bottom:var(--space-2);">Best for:</div>
+            <div class="d-flex flex-wrap gap-2 mb-4 delivery-best-for">
+              <span class="vb-badge badge-neutral">Mixed teams</span>
+              <span class="vb-badge badge-neutral">Flexible scheduling</span>
+              <span class="vb-badge badge-neutral">Long programs</span>
+            </div>
+            <div class="mt-auto">
+              <a href="contact.html?delivery=hybrid" class="btn-vb btn-vb-secondary btn-vb-block" id="btn-delivery-hybrid">Request Hybrid Training</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="vb-section bg-soft" id="compare">
+  <div class="vb-container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">Feature Comparison</span>
+      <h2 class="section-title">Compare Delivery Formats</h2>
+    </div>
+    <div class="compare-table-wrap" style="overflow-x:auto;">
+      <table class="compare-table" style="width:100%; border-collapse:collapse; min-width:600px;">
+        <thead>
+          <tr>
+            <th style="padding:14px 16px; text-align:left; background:var(--navy); color:#fff; font-family:var(--font-heading); font-size:0.875rem; border-radius:var(--radius-lg) 0 0 0;">Feature</th>
+            <th style="padding:14px 16px; text-align:center; background:var(--navy); color:#fff; font-family:var(--font-heading); font-size:0.875rem;">Live Online</th>
+            <th style="padding:14px 16px; text-align:center; background:var(--teal); color:#fff; font-family:var(--font-heading); font-size:0.875rem;">In-Person</th>
+            <th style="padding:14px 16px; text-align:center; background:var(--navy); color:#fff; font-family:var(--font-heading); font-size:0.875rem; border-radius:0 var(--radius-lg) 0 0;">Hybrid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid var(--border); color:var(--heading); font-weight:500; font-size:0.875rem;">Live facilitator-led sessions</td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border); background:rgba(45,124,122,0.04);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid var(--border); color:var(--heading); font-weight:500; font-size:0.875rem;">Suitable for remote employees</td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border); background:rgba(45,124,122,0.04);"><i class="ri-close-line" style="color:var(--body-muted); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid var(--border); color:var(--heading); font-weight:500; font-size:0.875rem;">On-site facilitation</td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-close-line" style="color:var(--body-muted); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border); background:rgba(45,124,122,0.04);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid var(--border); color:var(--heading); font-weight:500; font-size:0.875rem;">Group breakout activities</td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border); background:rgba(45,124,122,0.04);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid var(--border); color:var(--heading); font-weight:500; font-size:0.875rem;">Attendance tracking</td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border); background:rgba(45,124,122,0.04);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid var(--border); color:var(--heading); font-weight:500; font-size:0.875rem;">HR portal integration</td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border); background:rgba(45,124,122,0.04);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; border-bottom:1px solid var(--border);"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px; color:var(--heading); font-weight:500; font-size:0.875rem;">Best for global teams</td>
+            <td style="padding:12px 16px; text-align:center;"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center; background:rgba(45,124,122,0.04);"><i class="ri-close-line" style="color:var(--body-muted); font-size:1.25rem;"></i></td>
+            <td style="padding:12px 16px; text-align:center;"><i class="ri-check-line" style="color:var(--success); font-size:1.25rem;"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- WHICH FORMAT IS RIGHT? -->
+<section class="vb-section bg-white">
+  <div class="vb-container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">Choosing Your Format</span>
+      <h2 class="section-title">Which Delivery Format Is Right for Your Organization?</h2>
+    </div>
+    <div class="row g-4 delivery-choice-grid">
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="outcome-card format-choice-card h-100">
+          <div class="outcome-icon"><i class="ri-video-line"></i></div>
+          <div class="outcome-title">Choose Live Online When</div>
+          <div class="format-choice-list d-flex flex-column gap-2 mt-3">
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Mostly remote teams</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Employees across cities or countries</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Cross-time-zone scheduling</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Minimal travel disruption</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 reveal" data-delay="60">
+        <div class="outcome-card format-choice-card h-100">
+          <div class="outcome-icon"><i class="ri-building-4-line"></i></div>
+          <div class="outcome-title">Choose In-Person When</div>
+          <div class="format-choice-list d-flex flex-column gap-2 mt-3">
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> One-location office teams</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Maximum interaction and practice</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Intensive workshop-style training</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Stronger in-person engagement</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 reveal" data-delay="120">
+        <div class="outcome-card format-choice-card h-100">
+          <div class="outcome-icon"><i class="ri-merge-cells-horizontal"></i></div>
+          <div class="outcome-title">Choose Hybrid When</div>
+          <div class="format-choice-list d-flex flex-column gap-2 mt-3">
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Remote and office-based employees</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Flexible, longer-term programs</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Online and in-person sessions</div>
+            <div class="info-row" style="font-size:0.875rem;"><i class="ri-arrow-right-s-line" style="color:var(--teal);"></i> Blended scheduling and budgets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="vb-cta-section">
+  <div class="vb-cta-bg" style="background-image: url('assets/images/cta/cta-delivery.png');"></div>
+  <div class="vb-cta-overlay"></div>
+  <div class="vb-container">
+    <div class="vb-cta-content">
+      <h2 class="cta-title">Not Sure Which Format to Choose?</h2>
+      <p class="cta-subtitle">A VerbaBridge consultant can help you choose the right delivery format based on your team structure, working pattern and training objectives.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-vb btn-vb-white btn-vb-xl" id="btn-delivery-cta"><i class="ri-phone-line"></i> Request Training Consultation</a>
+        <a href="programs.html" class="btn-vb btn-vb-outline-white btn-vb-xl"><i class="ri-book-open-line"></i> Browse Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="vb-footer" id="footer">
+  <div class="vb-container">
+    <div class="vb-footer-top">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="vb-brand mb-3 d-inline-flex" style="text-decoration:none;" aria-label="VerbaBridge Corporate Learning">
+          <div class="footer-logo-wrap">
+            <img src="assets/images/logo.png" alt="VerbaBridge Corporate Learning" class="vb-brand-img" height="44">
+          </div>
+        </a>
+        <p class="footer-brand-desc">Enterprise language and communication training delivering measurable business impact.</p>
+        <div class="footer-contact-item"><i class="ri-mail-line"></i> contact@verbabridge.com</div>
+        <div class="footer-contact-item"><i class="ri-phone-line"></i> +1 (800) 582-9382</div>
+        <div class="footer-contact-item"><i class="ri-map-pin-line"></i> New York &bull; London &bull; Singapore</div>
+        <div class="footer-socials mt-3">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="ri-linkedin-line"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+        </div>
+      </div>
+      <!-- Programs -->
+      <div>
+        <div class="footer-col-title">Programs</div>
+        <ul class="footer-nav-list">
+          <li><a href="program-detail.html?id=business-english" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Business English</a></li>
+          <li><a href="program-detail.html?id=presentation-skills" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Presentation Skills</a></li>
+          <li><a href="program-detail.html?id=cross-cultural" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Cross-Cultural</a></li>
+          <li><a href="program-detail.html?id=leadership-voice" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Leadership Voice</a></li>
+          <li><a href="programs.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> All Programs</a></li>
+        </ul>
+      </div>
+      <!-- Solutions -->
+      <div>
+        <div class="footer-col-title">Solutions</div>
+        <ul class="footer-nav-list">
+          <li><a href="corporate-solutions.html#new-hire" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> New Hire Communication</a></li>
+          <li><a href="corporate-solutions.html#customer-facing" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Customer-Facing Teams</a></li>
+          <li><a href="corporate-solutions.html#managers" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Managers & Leads</a></li>
+          <li><a href="corporate-solutions.html#global-teams" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Global Teams</a></li>
+          <li><a href="delivery-modes.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Delivery Options</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-nav-list">
+          <li><a href="about.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+          <li><a href="about.html#faculty" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Expert Faculty</a></li>
+          <li><a href="contact.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Contact Us</a></li>
+          <li><a href="about.html#framework" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> CEFR Framework</a></li>
+          <li><a href="contact.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Request Consultation</a></li>
+        </ul>
+      </div>
+      <!-- Resources -->
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-nav-list">
+          <li><a href="case-studies.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Client Case Studies</a></li>
+          <li><a href="delivery-modes.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Delivery Modalities</a></li>
+          <li><a href="case-study-detail.html?id=tech-ops" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Training ROI & Impact</a></li>
+          <li><a href="program-detail.html?id=business-english" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Course Syllabus</a></li>
+          <li><a href="about.html#security" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Enterprise Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="vb-footer-bottom">
+      <p class="footer-copyright">&copy; 2026 VerbaBridge Corporate Learning. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#" class="footer-legal-link">Privacy Policy</a>
+        <a href="#" class="footer-legal-link">Terms of Service</a>
+        <a href="#" class="footer-legal-link">Enterprise Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="vb-toast-container" id="toast-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>
+
+
+
+

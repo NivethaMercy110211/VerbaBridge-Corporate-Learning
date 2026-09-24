@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#F4F7F9"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#favBg)"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" stroke="#E2E8F0" stroke-width="1.5" fill="none"/>
+  
+  <g transform="translate(6, 6) scale(0.8125)">
+    <!-- Left Person / Navy Left Stem of V -->
+    <circle cx="16" cy="14" r="7" fill="#183B56"/>
+    <path d="M4 25C11 27 18 36 29 59C24 59 18 55 12 43L4 25Z" fill="#183B56"/>
+
+    <!-- Right Person / Teal Right Stem of V -->
+    <circle cx="48" cy="14" r="7" fill="#1A7B78"/>
+    <path d="M60 25C53 27 46 36 35 59C40 59 46 55 52 43L60 25Z" fill="#1A7B78"/>
+
+    <!-- Dynamic Interlocking Bridge Arch -->
+    <path d="M12 37C20 28 44 28 52 37C44 32 20 32 12 37Z" fill="#1A7B78"/>
+    <path d="M12 37C24 32 40 32 52 37" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,503 @@
+﻿/* =========================================================
+   VerbaBridge — tablet.css
+   Tablet breakpoints: 768px and 1024px
+   ========================================================= */
+
+/* ---- 1024px (iPad Pro) ---- */
+@media (max-width: 1200px) and (min-width: 769px) {
+  :root {
+    --container-pad-xl: 28px;
+    --sidebar-width: 220px;
+  }
+
+  .vb-container {
+    padding: 0 var(--container-pad-lg);
+  }
+
+  .vb-section {
+    padding: var(--space-7) 0;
+  }
+
+  /* Hero */
+  .vb-hero {
+    min-height: 500px;
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .vb-hero-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
+  }
+
+  /* Nav — hide tagline in compact header if tight */
+  .vb-header .vb-brand-tagline {
+    display: block;
+    font-size: 0.58rem;
+  }
+
+  /* Dashboard */
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dash-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dash-grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dash-grid-main-aside {
+    grid-template-columns: 1fr;
+  }
+
+  /* Programs */
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Case Studies */
+  .cs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reports */
+  .reports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .report-filter-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Auth */
+  .auth-visual-title {
+    font-size: 1.875rem;
+  }
+
+  /* iPad Pro (1024px) uniform line counts and consistent text wrap per section grid */
+  .outcome-title,
+  .solution-title,
+  .prog-card-title,
+  .cs-card-title,
+  .delivery-card h3,
+  .about-card h3,
+  .stat-card .stat-label {
+    display: block;
+    line-height: 1.35 !important;
+    min-height: 2.7em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .home-outcomes-grid .outcome-desc,
+  .about-outcomes-grid .outcome-desc,
+  #outcomes .outcome-desc,
+  .outcomes-grid .outcome-desc {
+    display: block;
+    line-height: 1.65 !important;
+    min-height: 6.6em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .programs-grid .prog-card-desc,
+  .home-programs-grid .prog-card-desc,
+  .additional-programs-grid .prog-card-desc,
+  #programs .prog-card-desc {
+    display: block;
+    line-height: 1.65 !important;
+    min-height: 4.95em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  #solutions .solution-desc,
+  .home-solutions-grid .solution-desc,
+  .about-industries-grid .solution-desc,
+  #global-teams .solution-desc,
+  #facilitators .solution-desc,
+  .solution-card .solution-desc {
+    display: block;
+    line-height: 1.65 !important;
+    min-height: 4.95em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  #delivery .delivery-card p,
+  .delivery-modes-grid .delivery-card p,
+  .delivery-card .delivery-desc {
+    display: block;
+    line-height: 1.65 !important;
+    min-height: 4.95em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  #case-study-preview .cs-card-excerpt,
+  #cs-grid .cs-card-excerpt,
+  .cs-card .cs-card-excerpt {
+    display: block;
+    line-height: 1.5 !important;
+    min-height: 3em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  #testimonials .testimonial-quote,
+  .testimonial-card .testimonial-quote {
+    display: block;
+    line-height: 1.65 !important;
+    min-height: 6.6em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .impact-benchmarks-grid .stat-card p,
+  #progress-tracking .stat-card p,
+  .stat-card .benchmark-desc {
+    display: block;
+    line-height: 1.6 !important;
+    min-height: 4.8em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .about-philosophy-grid .about-card p,
+  .about-card p {
+    display: block;
+    line-height: 1.65 !important;
+    min-height: 4.95em !important;
+    white-space: normal;
+    text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .prog-card,
+  .outcome-card,
+  .solution-card,
+  .delivery-card,
+  .cs-card,
+  .about-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .prog-card-footer,
+  .outcome-card .btn-vb,
+  .solution-card .btn-vb,
+  .delivery-card .btn-vb,
+  .cs-card-link {
+    margin-top: auto !important;
+  }
+
+  .outcome-desc>span,
+  .solution-desc>span,
+  .benchmark-desc>span {
+    display: inline;
+  }
+
+  .outcome-desc>span:not(:last-child)::after,
+  .solution-desc>span:not(:last-child)::after,
+  .benchmark-desc>span:not(:last-child)::after {
+    content: " ";
+  }
+}
+
+/* ---- 768px (Tablet Portrait / iPad Mini) ---- */
+@media (max-width: 768px) {
+  :root {
+    --container-pad-xl: 20px;
+    --header-height: 60px;
+  }
+
+  .vb-container {
+    padding: 0 var(--container-pad-md);
+  }
+
+  .vb-section {
+    padding: var(--space-6) 0;
+  }
+
+  .vb-section-lg {
+    padding: var(--space-7) 0;
+  }
+
+  /* Header */
+  .vb-nav {
+    display: none;
+  }
+
+  .vb-header-actions .btn-vb-primary,
+  .vb-header-actions .btn-vb-secondary {
+    display: none;
+  }
+
+  .vb-header-actions .vb-theme-toggle,
+  .vb-header-actions .vb-rtl-toggle {
+    display: none;
+  }
+
+  .vb-menu-toggle {
+    display: flex;
+  }
+
+  /* Hero */
+  .vb-hero {
+    min-height: 440px;
+  }
+
+  .vb-hero-content {
+    padding: var(--space-7) 0;
+  }
+
+  .vb-hero-overlay {
+    background: rgba(0, 0, 0, 0.72);
+  }
+
+  .hero-headline {
+    font-size: 2rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.9375rem;
+  }
+
+  /* Programs */
+  .programs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Case Studies */
+  .cs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cs-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Dashboard */
+  .vb-sidebar {
+    transform: translateX(-100%);
+    z-index: 300;
+  }
+
+  [dir="rtl"] .vb-sidebar {
+    transform: translateX(100%);
+  }
+
+  .vb-sidebar.mobile-open {
+    transform: translateX(0) !important;
+  }
+
+  .vb-dash-main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .sidebar-drawer-toggle {
+    display: flex;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dash-grid-2,
+  .dash-grid-3,
+  .dash-grid-main-aside {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-content {
+    padding: var(--space-3);
+  }
+
+  .dash-topbar {
+    padding: 0 var(--space-3);
+  }
+
+  .dash-search {
+    display: none;
+  }
+
+  /* Reports */
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-filter-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Auth — keep visual panel visible and beautifully laid out on iPad Mini & tablets */
+  .vb-auth-page {
+    grid-template-columns: minmax(300px, 44%) 1fr;
+    min-height: 100vh;
+  }
+
+  .auth-visual {
+    display: flex;
+    min-height: 100%;
+  }
+
+  .auth-visual-content {
+    padding: 36px 28px;
+    min-height: 100vh;
+  }
+
+  .auth-visual-title {
+    font-size: 1.4rem;
+  }
+
+  .auth-form-panel {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  /* Forms */
+  .form-row-2,
+  .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Enrollment steps — scroll */
+  .enrollment-steps {
+    overflow-x: auto;
+  }
+
+  /* Journey track — vertical on tablet */
+  .journey-track {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .journey-track::before {
+    display: none;
+  }
+
+  /* Page banner */
+  .vb-page-banner {
+    padding: 4rem 0 3.5rem;
+    min-height: 320px;
+  }
+
+  .page-banner-title {
+    font-size: 1.875rem;
+  }
+
+  /* Comparison table scroll */
+  .compare-table-wrap {
+    overflow-x: auto;
+  }
+
+  /* Section padding */
+  .vb-section-sm {
+    padding: var(--space-5) 0;
+  }
+
+  /* Odd number grids — center the last grid item in 2-column layouts */
+  .vb-section .row:not(.no-center-odd)>[class*="col-md-6"]:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>[class*="col-lg-4"]:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>[class*="col-lg-3"]:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>.col-md-6:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>.col-6:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>.col-12.col-md-6:last-child:nth-child(odd),
+  .row.center-last-odd>[class*="col-"]:last-child:nth-child(odd) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .programs-grid> :last-child:nth-child(odd),
+  .cs-grid> :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 9px);
+    max-width: 100%;
+    justify-self: center;
+  }
+}
+
+/* ---- iPad Mini (768x1024) & Tablet Range (576px - 991.98px) ---- */
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+  .vb-section .row:not(.no-center-odd)>[class*="col-md-6"]:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>[class*="col-lg-4"]:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>[class*="col-lg-3"]:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>.col-md-6:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>.col-6:last-child:nth-child(odd),
+  .vb-section .row:not(.no-center-odd)>.col-12.col-md-6:last-child:nth-child(odd),
+  .row.center-last-odd>[class*="col-"]:last-child:nth-child(odd) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .programs-grid> :last-child:nth-child(odd),
+  .cs-grid> :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 9px);
+    max-width: 100%;
+    justify-self: center;
+  }
+
+  /* Ensure natural text wrapping and remove ellipsis/line clamps on iPad Mini */
+  .outcome-desc,
+  .solution-desc,
+  .prog-card-desc,
+  .cs-card-excerpt,
+  .stat-card p,
+  .testimonial-quote,
+  .delivery-card p,
+  .delivery-compare-desc,
+  .outcome-title,
+  .solution-title,
+  .prog-card-title,
+  .cs-card-title {
+    display: block;
+    overflow: visible;
+    max-height: none;
+    min-height: auto;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    text-overflow: unset;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .outcome-desc>span,
+  .solution-desc>span,
+  .benchmark-desc>span {
+    display: inline;
+  }
+
+  .outcome-desc>span:not(:last-child)::after,
+  .solution-desc>span:not(:last-child)::after,
+  .benchmark-desc>span:not(:last-child)::after {
+    content: " ";
+  }
+}

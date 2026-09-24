@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerbaBridge — Communication Training Built Around Your Workforce</title>
+  <meta name="description" content="VerbaBridge helps organizations build customized communication learning pathways — from skill assessment through structured training to measurable progress. Explore our enterprise learning journey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css?v=3">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/footer.css?v=2">
+  <link rel="stylesheet" href="css/dark-theme.css?v=2">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/site-fixes.css?v=36">
+  <link rel="stylesheet" href="css/banner-motion.css?v=3">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="vb-header" id="site-header">
+  <div class="vb-container">
+    <div class="header-inner">
+      <a href="index.html" class="vb-brand" aria-label="VerbaBridge Corporate Learning">
+        <img src="assets/images/logo.png" alt="VerbaBridge Corporate Learning" class="vb-brand-img" height="48">
+      </a>
+      <nav class="vb-nav" aria-label="Primary navigation">
+        <div class="vb-nav-item">
+          <a href="home-2.html" class="vb-nav-link active">Home <i class="ri-arrow-down-s-line" style="font-size:0.875rem;"></i></a>
+          <div class="vb-nav-dropdown">
+            <a href="index.html" class="vb-dropdown-link">Home 1</a>
+            <a href="home-2.html" class="vb-dropdown-link active">Home 2</a>
+                    </div>
+        </div>
+        <a href="about.html" class="vb-nav-link">About</a>
+        <div class="vb-nav-item">
+          <a href="programs.html" class="vb-nav-link">Programs <i class="ri-arrow-down-s-line" style="font-size:0.875rem;"></i></a>
+          <div class="vb-nav-dropdown">
+            <a href="programs.html" class="vb-dropdown-link">All Programs</a>
+            <a href="program-detail.html?id=business-english" class="vb-dropdown-link">Program Detail</a>
+          </div>
+        </div>
+        <a href="delivery-modes.html" class="vb-nav-link">Delivery</a>
+        <a href="corporate-solutions.html" class="vb-nav-link">Solutions</a>
+        <a href="case-studies.html" class="vb-nav-link">Case Studies</a>
+        <a href="contact.html" class="vb-nav-link">Contact</a>
+      </nav>
+      <div class="vb-header-actions">
+        <button class="vb-theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="ri-moon-line"></i></button>
+        <button class="vb-rtl-toggle" data-rtl-toggle aria-label="Toggle RTL"><span>RTL</span></button>
+        <a href="hr-login.html" class="btn-vb btn-vb-secondary btn-vb-sm"><i class="ri-user-line"></i> HR Login</a>
+        <a href="dashboard.html" class="btn-vb btn-vb-primary btn-vb-sm"><i class="ri-dashboard-line"></i> HR Dashboard</a>
+        <button class="vb-menu-toggle" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="ri-menu-line"></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="vb-mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav class="vb-mobile-nav">
+    <div class="vmn-group">
+      <button class="vmn-group-toggle" aria-expanded="false">
+        <i class="ri-home-line"></i>
+        <span class="vmn-label">Home</span>
+        <i class="ri-arrow-down-s-line vmn-arrow"></i>
+      </button>
+      <div class="vmn-submenu">
+        <a href="index.html" class="vmn-sub-link"><i class="ri-home-4-line"></i> Home 1</a>
+        <a href="home-2.html" class="vmn-sub-link active"><i class="ri-layout-line"></i> Home 2</a>
+      </div>
+    </div>
+    <a href="about.html" class="vb-mobile-nav-link"><i class="ri-information-line"></i> About</a>
+    <div class="vmn-group">
+      <button class="vmn-group-toggle" aria-expanded="false">
+        <i class="ri-book-open-line"></i>
+        <span class="vmn-label">Programs</span>
+        <i class="ri-arrow-down-s-line vmn-arrow"></i>
+      </button>
+      <div class="vmn-submenu">
+        <a href="programs.html" class="vmn-sub-link"><i class="ri-list-check"></i> All Programs</a>
+        <a href="program-detail.html?id=business-english" class="vmn-sub-link"><i class="ri-file-list-3-line"></i> Program Detail</a>
+      </div>
+    </div>
+    <a href="delivery-modes.html" class="vb-mobile-nav-link"><i class="ri-global-line"></i> Delivery Modes</a>
+    <a href="corporate-solutions.html" class="vb-mobile-nav-link"><i class="ri-building-2-line"></i> Corporate Solutions</a>
+    <a href="case-studies.html" class="vb-mobile-nav-link"><i class="ri-bar-chart-box-line"></i> Case Studies</a>
+    <a href="contact.html" class="vb-mobile-nav-link"><i class="ri-phone-line"></i> Contact</a>
+  </nav>
+  <div class="vb-mobile-actions">
+    <a href="dashboard.html" class="btn-vb btn-vb-primary btn-vb-block"><i class="ri-dashboard-line"></i> HR Dashboard</a>
+    <a href="hr-login.html" class="btn-vb btn-vb-secondary btn-vb-block"><i class="ri-user-line"></i> HR Login</a>
+  </div>
+  <div class="vb-mobile-controls">
+    <button class="vb-theme-toggle" data-theme-toggle><i class="ri-moon-line"></i></button>
+    <button class="vb-rtl-toggle" data-rtl-toggle><span>RTL</span></button>
+  </div>
+</div>
+<div class="vb-overlay" id="mobile-overlay"></div>
+
+<!-- HERO — distinctly different layout -->
+<section class="vb-hero" id="hero" aria-label="Hero section" style="min-height:720px;">
+  <div class="vb-hero-bg" style="background-image: url('assets/images/hero/home2.png');"></div>
+  <div class="vb-hero-overlay"></div>
+  <div class="vb-container">
+    <div class="row align-items-center" style="min-height:720px; padding:100px 0;">
+      <div class="col-lg-7 position-relative" style="z-index:2;">
+        <div class="hero-eyebrow"><i class="ri-route-line"></i> The Enterprise Learning Journey</div>
+        <h1 class="hero-headline">Communication Training Built Around Your Workforce.</h1>
+        <p class="hero-subtext">From skill assessment through structured programs to measurable outcomes — VerbaBridge designs the complete training journey your organization needs.</p>
+        <div class="hero-cta-group">
+          <a href="contact.html" class="btn-vb btn-vb-teal btn-vb-xl" id="btn-build-plan">
+            <i class="ri-route-line"></i> Build a Training Plan
+          </a>
+          <a href="programs.html" class="btn-vb btn-vb-outline-white btn-vb-xl" id="btn-view-programs-h2">
+            <i class="ri-book-open-line"></i> View Programs
+          </a>
+        </div>
+      </div>
+      <!-- RIGHT: Floating Journey Panel -->
+      <div class="col-lg-5 col-12 d-flex align-items-center justify-content-center justify-content-lg-end mt-4 mt-lg-0" style="z-index:2;">
+        <div class="hero-float-panel hero-journey-panel">
+
+          <div class="hero-float-journey-label">
+            <i class="ri-route-line"></i> The VerbaBridge Learning Journey
+          </div>
+
+          <div class="hero-float-journey-steps">
+
+            <div class="hfj-step">
+              <div class="hfj-num">1</div>
+              <div class="hfj-line"></div>
+              <div class="hfj-content">
+                <span class="hfj-title">Assess</span>
+                <span class="hfj-desc">Identify communication needs and skill levels</span>
+              </div>
+            </div>
+
+            <div class="hfj-step">
+              <div class="hfj-num">2</div>
+              <div class="hfj-line"></div>
+              <div class="hfj-content">
+                <span class="hfj-title">Design</span>
+                <span class="hfj-desc">Customize program for your workforce</span>
+              </div>
+            </div>
+
+            <div class="hfj-step">
+              <div class="hfj-num">3</div>
+              <div class="hfj-line"></div>
+              <div class="hfj-content">
+                <span class="hfj-title">Train</span>
+                <span class="hfj-desc">Deliver expert-led sessions in your format</span>
+              </div>
+            </div>
+
+            <div class="hfj-step">
+              <div class="hfj-num">4</div>
+              <div class="hfj-line"></div>
+              <div class="hfj-content">
+                <span class="hfj-title">Practice</span>
+                <span class="hfj-desc">Apply skills in real business scenarios</span>
+              </div>
+            </div>
+
+            <div class="hfj-step">
+              <div class="hfj-num">5</div>
+              <div class="hfj-line"></div>
+              <div class="hfj-content">
+                <span class="hfj-title">Measure</span>
+                <span class="hfj-desc">Track attendance, progress and completion</span>
+              </div>
+            </div>
+
+            <div class="hfj-step hfj-step-active">
+              <div class="hfj-num hfj-num-active">6</div>
+              <div class="hfj-content">
+                <span class="hfj-title">Improve</span>
+                <span class="hfj-desc">Review outcomes and plan next training cycle</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Floating badge -->
+          <div class="hero-float-badge">
+            <i class="ri-award-line"></i>
+            <span>End-to-End Enterprise Learning Support</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: IDENTIFY TRAINING NEEDS -->
+<section class="vb-section bg-white" id="identify-needs">
+  <div class="vb-container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal">
+        <span class="section-eyebrow">Step 1</span>
+        <h2 class="section-title">Identify Your Training Needs</h2>
+        <p class="text-body mb-4" style="font-size:0.9375rem; line-height:1.75;">
+          Every effective training program starts with a clear understanding of what your organization needs. We work with your HR or L&D team to identify the communication gaps that are affecting performance, collaboration or client relationships.
+        </p>
+        <div class="d-flex flex-column gap-3">
+          <div class="info-row"><i class="ri-check-double-line"></i> Review current communication challenges and pain points</div>
+          <div class="info-row"><i class="ri-check-double-line"></i> Identify priority departments, roles and employee levels</div>
+          <div class="info-row"><i class="ri-check-double-line"></i> Align training objectives with business goals</div>
+          <div class="info-row"><i class="ri-check-double-line"></i> Determine budget, timeline and delivery preferences</div>
+        </div>
+      </div>
+      <div class="col-lg-6 reveal" data-delay="80">
+        <div class="vb-section-media mb-4" style="height:220px; min-height:220px;">
+          <img src="assets/images/pages/solutions.jpg" alt="Identifying Organization Training Needs">
+        </div>
+        <div style="background:linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-white) 100%); border:1px solid var(--border); border-radius:var(--radius-2xl); padding:28px;">
+          <div style="font-family:var(--font-heading); font-weight:700; font-size:1rem; color:var(--heading); margin-bottom:16px;">Common Training Triggers</div>
+          <div class="d-flex flex-column gap-2">
+            <div class="outcome-card" style="padding:12px 16px;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <div style="width:32px; height:32px; background:var(--teal-faint); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; color:var(--teal); flex-shrink:0;"><i class="ri-user-add-line"></i></div>
+                <div>
+                  <div style="font-weight:600; color:var(--heading); font-size:0.875rem;">New Hire Onboarding</div>
+                  <div style="font-size:0.8125rem; color:var(--body);">Building professional communication from the start</div>
+                </div>
+              </div>
+            </div>
+            <div class="outcome-card" style="padding:12px 16px;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <div style="width:32px; height:32px; background:var(--teal-faint); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; color:var(--teal); flex-shrink:0;"><i class="ri-global-line"></i></div>
+                <div>
+                  <div style="font-weight:600; color:var(--heading); font-size:0.875rem;">Global Expansion</div>
+                  <div style="font-size:0.8125rem; color:var(--body);">Teams communicating across regions and cultures</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: WORKFORCE SKILL ASSESSMENT -->
+<section class="vb-section bg-soft" id="assessment">
+  <div class="vb-container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">Step 2</span>
+      <h2 class="section-title">Workforce Skill Assessment</h2>
+      <p class="section-subtitle mx-auto">Where appropriate, we assess your employees' current communication level to ensure training is structured at the right starting point for your team.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-3 col-md-6 reveal">
+        <div class="outcome-card text-center h-100">
+          <div class="outcome-icon mx-auto"><i class="ri-questionnaire-line"></i></div>
+          <div class="outcome-title">Communication Profile</div>
+          <p class="outcome-desc">Employees complete a short diagnostic to identify current communication strengths and key development priorities for the workplace.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 reveal" data-delay="60">
+        <div class="outcome-card text-center h-100">
+          <div class="outcome-icon mx-auto"><i class="ri-file-list-3-line"></i></div>
+          <div class="outcome-title">Group Analysis</div>
+          <p class="outcome-desc">Results are analyzed across teams to identify common patterns and shape training without individual performance evaluation.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 reveal" data-delay="120">
+        <div class="outcome-card text-center h-100">
+          <div class="outcome-icon mx-auto"><i class="ri-route-line"></i></div>
+          <div class="outcome-title">Learning Pathway</div>
+          <p class="outcome-desc">Diagnostic insights guide the recommended curriculum, starting proficiency level and tailored module sequence for employees.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 reveal" data-delay="180">
+        <div class="outcome-card text-center h-100">
+          <div class="outcome-icon mx-auto"><i class="ri-shield-check-line"></i></div>
+          <div class="outcome-title">Confidential & Professional</div>
+          <p class="outcome-desc">All assessments are conducted confidentially to support curriculum design and structured workforce development goals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: CUSTOMIZED LEARNING PATHWAYS -->
+<section class="vb-section bg-white" id="pathways">
+  <div class="vb-container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal" data-delay="60">
+        <div class="vb-section-media" style="min-height:340px;">
+          <img src="assets/images/programs/cross-cultural.jpg" alt="Customized Learning Pathways for Global Teams">
+        </div>
+      </div>
+      <div class="col-lg-6 reveal">
+        <span class="section-eyebrow">Step 3</span>
+        <h2 class="section-title">Customized Learning Pathways</h2>
+        <p class="text-body mb-4" style="font-size:0.9375rem; line-height:1.75;">
+          We configure training programs around your employees' specific context rather than applying a generic course. Programs can be customized by department, level, job function and business objective.
+        </p>
+        <p class="text-body mb-4" style="font-size:0.9375rem; line-height:1.75;">
+          Whether your organization needs a single focused program for one team or a structured development pathway across multiple departments — we build the training structure that fits.
+        </p>
+        <a href="contact.html" class="btn-vb btn-vb-primary" id="btn-h2-consult">
+          <i class="ri-phone-line"></i> Discuss Your Requirements
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: DEPARTMENT PROGRAMS -->
+<section class="vb-section bg-soft" id="dept-programs">
+  <div class="vb-container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">Step 4 — Training by Department</span>
+      <h2 class="section-title">Department-Based Programs</h2>
+      <p class="section-subtitle mx-auto">Programs are structured around the specific communication contexts of each department — rather than a one-size-fits-all approach.</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-2 col-md-4 col-6 reveal">
+        <div class="delivery-card text-center p-0 overflow-hidden h-100">
+          <div class="card-top-media" style="height:110px;">
+            <img src="assets/images/programs/negotiation.jpg" alt="Sales Department Communication">
+          </div>
+          <div class="p-3">
+            <div class="delivery-card-icon mx-auto mt-n4 mb-2" style="width:40px; height:40px; position:relative; z-index:2; margin-top:-26px; background:var(--bg-card); font-size:1.1rem;"><i class="ri-bar-chart-line"></i></div>
+            <div class="fw-700 text-heading" style="font-size:0.875rem;">Sales</div>
+            <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Client communication</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 reveal" data-delay="30">
+        <div class="delivery-card text-center p-0 overflow-hidden h-100">
+          <div class="card-top-media" style="height:110px;">
+            <img src="assets/images/pages/solution-customer.jpg" alt="Customer Support Communication">
+          </div>
+          <div class="p-3">
+            <div class="delivery-card-icon mx-auto mt-n4 mb-2" style="width:40px; height:40px; position:relative; z-index:2; margin-top:-26px; background:var(--bg-card); font-size:1.1rem;"><i class="ri-customer-service-2-line"></i></div>
+            <div class="fw-700 text-heading" style="font-size:0.875rem;">Customer Support</div>
+            <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Service communication</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 reveal" data-delay="60">
+        <div class="delivery-card text-center p-0 overflow-hidden h-100">
+          <div class="card-top-media" style="height:110px;">
+            <img src="assets/images/pages/solution-tech.jpg" alt="Engineering Technical Communication">
+          </div>
+          <div class="p-3">
+            <div class="delivery-card-icon mx-auto mt-n4 mb-2" style="width:40px; height:40px; position:relative; z-index:2; margin-top:-26px; background:var(--bg-card); font-size:1.1rem;"><i class="ri-code-line"></i></div>
+            <div class="fw-700 text-heading" style="font-size:0.875rem;">Engineering</div>
+            <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Technical communication</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 reveal" data-delay="90">
+        <div class="delivery-card text-center p-0 overflow-hidden h-100">
+          <div class="card-top-media" style="height:110px;">
+            <img src="assets/images/case-studies/case-fintech.jpg" alt="Finance Professional Reporting">
+          </div>
+          <div class="p-3">
+            <div class="delivery-card-icon mx-auto mt-n4 mb-2" style="width:40px; height:40px; position:relative; z-index:2; margin-top:-26px; background:var(--bg-card); font-size:1.1rem;"><i class="ri-money-dollar-circle-line"></i></div>
+            <div class="fw-700 text-heading" style="font-size:0.875rem;">Finance</div>
+            <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Professional reporting</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 reveal" data-delay="120">
+        <div class="delivery-card text-center p-0 overflow-hidden h-100">
+          <div class="card-top-media" style="height:110px;">
+            <img src="assets/images/case-studies/case-manufacturing.jpg" alt="Operations Cross-team Communication">
+          </div>
+          <div class="p-3">
+            <div class="delivery-card-icon mx-auto mt-n4 mb-2" style="width:40px; height:40px; position:relative; z-index:2; margin-top:-26px; background:var(--bg-card); font-size:1.1rem;"><i class="ri-settings-3-line"></i></div>
+            <div class="fw-700 text-heading" style="font-size:0.875rem;">Operations</div>
+            <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Cross-team communication</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 reveal" data-delay="150">
+        <div class="delivery-card text-center p-0 overflow-hidden h-100">
+          <div class="card-top-media" style="height:110px;">
+            <img src="assets/images/pages/solution-leadership.jpg" alt="Management Leadership Communication">
+          </div>
+          <div class="p-3">
+            <div class="delivery-card-icon mx-auto mt-n4 mb-2" style="width:40px; height:40px; position:relative; z-index:2; margin-top:-26px; background:var(--bg-card); font-size:1.1rem;"><i class="ri-team-line"></i></div>
+            <div class="fw-700 text-heading" style="font-size:0.875rem;">Management</div>
+            <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Leadership communication</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4" style="font-size:0.875rem; color:var(--body-muted);">
+      <i class="ri-information-line"></i> These are example departments. VerbaBridge designs training for any department structure in your organization.
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: EXPERT FACILITATORS -->
+<section class="vb-section bg-white" id="facilitators">
+  <div class="vb-container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">Step 5 — Who Delivers</span>
+      <h2 class="section-title">Expert Corporate Communication Facilitators</h2>
+      <p class="section-subtitle mx-auto">Our facilitators are experienced communication professionals — not generic trainers. They bring deep knowledge of corporate communication practices and professional learning facilitation.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="solution-card text-center h-100 p-0 overflow-hidden">
+          <div class="card-top-media">
+            <img src="assets/images/programs/business-english.jpg" alt="Professional Facilitator Experience">
+          </div>
+          <div class="p-4">
+            <div class="solution-icon mx-auto mt-n4 mb-3" style="position:relative; z-index:2; margin-top:-32px; background:var(--bg-card);"><i class="ri-medal-line"></i></div>
+            <div class="solution-title">Professional Experience</div>
+            <p class="solution-desc">Facilitators bring real-world corporate <br class="tablet-card-break">communication experience — <br class="tablet-card-break">understanding the contexts, pressures <br class="tablet-card-break">and expectations of professional <br class="tablet-card-break">environments.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 reveal" data-delay="60">
+        <div class="solution-card text-center h-100 p-0 overflow-hidden">
+          <div class="card-top-media">
+            <img src="assets/images/programs/cross-cultural.jpg" alt="International Perspective">
+          </div>
+          <div class="p-4">
+            <div class="solution-icon mx-auto mt-n4 mb-3" style="position:relative; z-index:2; margin-top:-32px; background:var(--bg-card);"><i class="ri-global-line"></i></div>
+            <div class="solution-title">International Perspective</div>
+            <p class="solution-desc">Many facilitators have worked in <br class="tablet-card-break">international corporate environments <br class="tablet-card-break">and bring authentic cross-cultural <br class="tablet-card-break">communication understanding to <br class="tablet-card-break">training sessions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 reveal" data-delay="120">
+        <div class="solution-card text-center h-100 p-0 overflow-hidden">
+          <div class="card-top-media">
+            <img src="assets/images/delivery/in-person.jpg" alt="Practice-Led Approach">
+          </div>
+          <div class="p-4">
+            <div class="solution-icon mx-auto mt-n4 mb-3" style="position:relative; z-index:2; margin-top:-32px; background:var(--bg-card);"><i class="ri-focus-line"></i></div>
+            <div class="solution-title">Practice-Led Approach</div>
+            <p class="solution-desc">Sessions are designed around active <br class="tablet-card-break">participation — role-play, discussion <br class="tablet-card-break">and structured feedback — <br class="tablet-card-break">rather than passive <br class="tablet-card-break">instruction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: PRACTICE-LED LEARNING -->
+<section class="vb-section bg-soft" id="practice-learning">
+  <div class="vb-container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal">
+        <span class="section-eyebrow">Step 6 — How We Teach</span>
+        <h2 class="section-title">Practice-Led Learning for Real Contexts</h2>
+        <p class="text-body mb-4" style="font-size:0.9375rem; line-height:1.75;">Communication skills develop through deliberate practice — not lectures. Every VerbaBridge session includes structured activities that simulate real workplace scenarios your employees encounter.</p>
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="info-row fw-600 mb-1"><i class="ri-checkbox-circle-line" style="color:var(--teal);"></i> Role-play exercises</div>
+          </div>
+          <div class="col-6">
+            <div class="info-row fw-600 mb-1"><i class="ri-checkbox-circle-line" style="color:var(--teal);"></i> Presentation practice</div>
+          </div>
+          <div class="col-6">
+            <div class="info-row fw-600 mb-1"><i class="ri-checkbox-circle-line" style="color:var(--teal);"></i> Writing workshops</div>
+          </div>
+          <div class="col-6">
+            <div class="info-row fw-600 mb-1"><i class="ri-checkbox-circle-line" style="color:var(--teal);"></i> Discussion activities</div>
+          </div>
+          <div class="col-6">
+            <div class="info-row fw-600 mb-1"><i class="ri-checkbox-circle-line" style="color:var(--teal);"></i> Structured feedback</div>
+          </div>
+          <div class="col-6">
+            <div class="info-row fw-600 mb-1"><i class="ri-checkbox-circle-line" style="color:var(--teal);"></i> Business case scenarios</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 reveal" data-delay="80">
+        <div class="vb-section-media mb-4" style="height:220px; min-height:220px;">
+          <img src="assets/images/programs/meeting-fluency.jpg" alt="Practice Session in Action">
+        </div>
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-2xl); padding:28px;">
+          <div style="font-family:var(--font-heading); font-weight:700; color:var(--heading); margin-bottom:16px;">Sample Session Structure</div>
+          <div class="d-flex flex-column gap-2">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div style="width:6px; height:6px; background:var(--teal); border-radius:50%; margin-top:7px; flex-shrink:0;"></div>
+              <div><strong style="color:var(--heading); font-size:0.875rem;">Warm-up (10 min)</strong><p style="font-size:0.8125rem; color:var(--body); margin:2px 0 0;">Activate vocabulary and communication focus</p></div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div style="width:6px; height:6px; background:var(--teal); border-radius:50%; margin-top:7px; flex-shrink:0;"></div>
+              <div><strong style="color:var(--heading); font-size:0.875rem;">Instruction (20 min)</strong><p style="font-size:0.8125rem; color:var(--body); margin:2px 0 0;">Introduce professional language patterns</p></div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div style="width:6px; height:6px; background:var(--teal); border-radius:50%; margin-top:7px; flex-shrink:0;"></div>
+              <div><strong style="color:var(--heading); font-size:0.875rem;">Guided Practice (40 min)</strong><p style="font-size:0.8125rem; color:var(--body); margin:2px 0 0;">Apply skills in realistic workplace role-play</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: PROGRESS TRACKING -->
+<section class="vb-section bg-white" id="progress-tracking">
+  <div class="vb-container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">Step 7 — Measurement</span>
+      <h2 class="section-title">Progress &amp; Completion Tracking</h2>
+      <p class="section-subtitle mx-auto">HR and L&D managers have full visibility over training activity through the VerbaBridge portal — from enrollment through completion.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6 reveal">
+        <div class="stat-card text-center">
+          <div class="stat-card-icon teal mx-auto"><i class="ri-calendar-check-line"></i></div>
+          <div class="stat-value" style="font-size:1.375rem;">Session</div>
+          <div class="stat-label">Attendance tracked per session</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 reveal" data-delay="60">
+        <div class="stat-card text-center">
+          <div class="stat-card-icon navy mx-auto"><i class="ri-book-mark-line"></i></div>
+          <div class="stat-value" style="font-size:1.375rem;">Module</div>
+          <div class="stat-label">Progress tracked per module</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 reveal" data-delay="120">
+        <div class="stat-card text-center">
+          <div class="stat-card-icon success mx-auto"><i class="ri-bar-chart-box-line"></i></div>
+          <div class="stat-value" style="font-size:1.375rem;">Batch</div>
+          <div class="stat-label">Capacity monitored per batch</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 reveal" data-delay="180">
+        <div class="stat-card text-center">
+          <div class="stat-card-icon warning mx-auto"><i class="ri-award-line"></i></div>
+          <div class="stat-value" style="font-size:1.375rem;">Cert</div>
+          <div class="stat-label">Issued on program completion</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: HR REPORTING -->
+<section class="vb-section bg-soft" id="hr-reporting">
+  <div class="vb-container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal">
+        <span class="section-eyebrow">Step 8 — Reporting</span>
+        <h2 class="section-title">HR Reporting That Supports Decision-Making</h2>
+        <p class="text-body mb-4" style="font-size:0.9375rem; line-height:1.75;">The VerbaBridge HR portal provides structured reports that L&D managers can use to demonstrate training activity, justify investment and plan the next training cycle.</p>
+        <div class="d-flex flex-column gap-3 reporting-list">
+          <div class="info-row"><i class="ri-file-chart-line"></i><strong>Enrollment Report</strong><span>Who is enrolled in what program</span></div>
+          <div class="info-row"><i class="ri-calendar-check-line"></i><strong>Attendance Report</strong><span>Session-by-session attendance</span></div>
+          <div class="info-row"><i class="ri-bar-chart-box-line"></i><strong>Progress Report</strong><span>Module completion per employee</span></div>
+          <div class="info-row"><i class="ri-building-2-line"></i><strong>Department Report</strong><span>Training participation by department</span></div>
+          <div class="info-row"><i class="ri-award-line"></i><strong>Certificate Report</strong><span>Completion certificates issued</span></div>
+        </div>
+        <a href="dashboard.html#reports" class="btn-vb btn-vb-primary mt-4" id="btn-h2-reports">
+          <i class="ri-bar-chart-box-line"></i> View Reports Dashboard
+        </a>
+      </div>
+      <div class="col-lg-6 reveal" data-delay="80">
+        <!-- Mini dashboard preview -->
+        <div class="dash-panel">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">Department Training Participation</div>
+            <span class="vb-badge badge-teal">This Quarter</span>
+          </div>
+          <div class="dash-panel-body">
+            <div class="dept-bar-item">
+              <div class="dept-bar-label"><span>Sales</span><span>87%</span></div>
+              <div class="vb-progress"><div class="vb-progress-bar" style="width:87%;"></div></div>
+            </div>
+            <div class="dept-bar-item">
+              <div class="dept-bar-label"><span>Customer Support</span><span>74%</span></div>
+              <div class="vb-progress"><div class="vb-progress-bar" style="width:74%;"></div></div>
+            </div>
+            <div class="dept-bar-item">
+              <div class="dept-bar-label"><span>Operations</span><span>61%</span></div>
+              <div class="vb-progress"><div class="vb-progress-bar" style="width:61%;"></div></div>
+            </div>
+            <div class="dept-bar-item">
+              <div class="dept-bar-label"><span>Engineering</span><span>53%</span></div>
+              <div class="vb-progress"><div class="vb-progress-bar" style="width:53%;"></div></div>
+            </div>
+            <div class="dept-bar-item">
+              <div class="dept-bar-label"><span>Finance</span><span>46%</span></div>
+              <div class="vb-progress"><div class="vb-progress-bar" style="width:46%;"></div></div>
+            </div>
+          </div>
+          <div class="dash-panel-footer">
+            <span style="font-size:0.8125rem; color:var(--body-muted);">Sample data — replace with live portal</span>
+            <a href="dashboard.html" class="btn-action teal btn-vb-sm">Open Portal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: GLOBAL TEAM ENABLEMENT -->
+<section class="vb-section bg-white" id="global-teams">
+  <div class="vb-container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow">Step 9 — Global Capability</span>
+      <h2 class="section-title">Global Team Enablement</h2>
+      <p class="section-subtitle mx-auto">For organizations with employees across multiple countries and time zones, VerbaBridge provides training structures that work globally — delivered online, in-person or hybrid.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="solution-card p-0 overflow-hidden h-100">
+          <div class="card-top-media">
+            <img src="assets/images/delivery/hybrid.jpg" alt="Multi-Region Delivery">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="solution-icon mt-n4 mb-3" style="position:relative; z-index:2; margin-top:-32px; background:var(--bg-card);"><i class="ri-globe-line"></i></div>
+            <div class="solution-title">Multi-Region Delivery</div>
+            <p class="solution-desc">Programs structured for employees <br class="tablet-card-break">in different time zones — with <br class="tablet-card-break">session scheduling that minimizes <br class="tablet-card-break">disruption to global work <br class="tablet-card-break">patterns.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 reveal" data-delay="60">
+        <div class="solution-card p-0 overflow-hidden h-100">
+          <div class="card-top-media">
+            <img src="assets/images/programs/cross-cultural.jpg" alt="Language Contextualization">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="solution-icon mt-n4 mb-3" style="position:relative; z-index:2; margin-top:-32px; background:var(--bg-card);"><i class="ri-translate-2"></i></div>
+            <div class="solution-title">Language Contextualization</div>
+            <p class="solution-desc">Training scenarios are <br class="tablet-card-break">contextualized for the specific <br class="tablet-card-break">industry and communication <br class="tablet-card-break">environments of your global <br class="tablet-card-break">teams.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 reveal" data-delay="120">
+        <div class="solution-card p-0 overflow-hidden h-100">
+          <div class="card-top-media">
+            <img src="assets/images/pages/home2.jpg" alt="Unified HR Oversight">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="solution-icon mt-n4 mb-3" style="position:relative; z-index:2; margin-top:-32px; background:var(--bg-card);"><i class="ri-dashboard-line"></i></div>
+            <div class="solution-title">Unified HR Oversight</div>
+            <p class="solution-desc">One HR dashboard for all teams <br class="tablet-card-break">globally — enroll, track attendance <br class="tablet-card-break">and monitor completion <br class="tablet-card-break">regardless of where employees <br class="tablet-card-break">are located.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10: FINAL CTA -->
+<section class="vb-cta-section" id="cta-h2">
+  <div class="vb-cta-bg" style="background-image: url('assets/images/cta/cta-home2.png');"></div>
+  <div class="vb-cta-overlay"></div>
+  <div class="vb-container">
+    <div class="vb-cta-content">
+      <span class="vb-badge mb-4" style="background:rgba(102,170,167,0.2); border:1px solid rgba(102,170,167,0.3); color:#A8D5D3; display:inline-flex;"><i class="ri-route-line"></i> Start the Journey</span>
+      <h2 class="cta-title">Ready to Build a Training Plan for Your Workforce?</h2>
+      <p class="cta-subtitle">Talk to a VerbaBridge training consultant about designing a structured communication training program for your organization.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-vb btn-vb-white btn-vb-xl" id="btn-h2-build-plan">
+          <i class="ri-phone-line"></i> Build a Training Plan
+        </a>
+        <a href="programs.html" class="btn-vb btn-vb-outline-white btn-vb-xl" id="btn-h2-view-programs">
+          <i class="ri-book-open-line"></i> View Programs
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="vb-footer" id="footer">
+  <div class="vb-container">
+    <div class="vb-footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="vb-brand mb-3 d-inline-flex" style="text-decoration:none;" aria-label="VerbaBridge Corporate Learning">
+          <div class="footer-logo-wrap">
+            <img src="assets/images/logo.png" alt="VerbaBridge Corporate Learning" class="vb-brand-img" height="44">
+          </div>
+        </a>
+        <p class="footer-brand-desc">Enterprise language and communication training delivering measurable business impact.</p>
+        <div class="footer-contact-item"><i class="ri-mail-line"></i> contact@verbabridge.com</div>
+        <div class="footer-contact-item"><i class="ri-phone-line"></i> +1 (800) 582-9382</div>
+        <div class="footer-contact-item"><i class="ri-map-pin-line"></i> New York &bull; London &bull; Singapore</div>
+        <div class="footer-socials mt-3">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="ri-linkedin-line"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Programs</div>
+        <ul class="footer-nav-list">
+          <li><a href="program-detail.html?id=business-english" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Business English</a></li>
+          <li><a href="program-detail.html?id=presentation-skills" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Presentation Skills</a></li>
+          <li><a href="program-detail.html?id=cross-cultural" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Cross-Cultural</a></li>
+          <li><a href="program-detail.html?id=leadership-voice" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Leadership Voice</a></li>
+          <li><a href="programs.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> All Programs</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Solutions</div>
+        <ul class="footer-nav-list">
+          <li><a href="corporate-solutions.html#new-hire" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> New Hire Communication</a></li>
+          <li><a href="corporate-solutions.html#customer-facing" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Customer-Facing Teams</a></li>
+          <li><a href="corporate-solutions.html#managers" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Managers & Leads</a></li>
+          <li><a href="corporate-solutions.html#global-teams" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Global Teams</a></li>
+          <li><a href="delivery-modes.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Delivery Options</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-nav-list">
+          <li><a href="about.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+          <li><a href="about.html#faculty" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Expert Faculty</a></li>
+          <li><a href="contact.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Contact Us</a></li>
+          <li><a href="about.html#framework" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> CEFR Framework</a></li>
+          <li><a href="contact.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Request Consultation</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-nav-list">
+          <li><a href="case-studies.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Client Case Studies</a></li>
+          <li><a href="delivery-modes.html" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Delivery Modalities</a></li>
+          <li><a href="case-study-detail.html?id=tech-ops" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Training ROI & Impact</a></li>
+          <li><a href="program-detail.html?id=business-english" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Course Syllabus</a></li>
+          <li><a href="about.html#security" class="footer-nav-link"><i class="ri-arrow-right-s-line"></i> Enterprise Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="vb-footer-bottom">
+      <p class="footer-copyright">&copy; 2026 VerbaBridge Corporate Learning. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#" class="footer-legal-link">Privacy Policy</a>
+        <a href="#" class="footer-legal-link">Terms of Service</a>
+        <a href="#" class="footer-legal-link">Enterprise Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="vb-toast-container" id="toast-container" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,317 @@
+/* =========================================================
+   VerbaBridge — forms.css
+   Form inputs, selects, textareas, labels, validation states
+   ========================================================= */
+
+.vb-form-group {
+  margin-bottom: var(--space-4);
+}
+
+.vb-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 6px;
+}
+.vb-label .required {
+  color: var(--danger);
+  margin-left: 3px;
+}
+
+.vb-input,
+.vb-select,
+.vb-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--heading);
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.vb-input::placeholder,
+.vb-textarea::placeholder {
+  color: var(--body-muted);
+}
+
+.vb-input:focus,
+.vb-select:focus,
+.vb-textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(45, 124, 122, 0.15);
+  background-color: var(--bg-white);
+}
+
+.vb-input:hover:not(:focus),
+.vb-select:hover:not(:focus),
+.vb-textarea:hover:not(:focus) {
+  border-color: var(--body-muted);
+}
+
+.vb-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2365727A' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.vb-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ---- Input with Icon ---- */
+.vb-input-group {
+  position: relative;
+}
+.vb-input-group .vb-input {
+  padding-left: 40px;
+}
+.vb-input-group .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--body-muted);
+  font-size: 0.9375rem;
+  pointer-events: none;
+}
+
+.vb-input-group .vb-input:focus + .input-icon,
+.vb-input-group .input-icon.active {
+  color: var(--teal);
+}
+
+/* ---- Trailing Icon / Button ---- */
+.vb-input-group .input-trail {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--body-muted);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 0.9375rem;
+  transition: color var(--transition-fast);
+}
+.vb-input-group .input-trail:hover { color: var(--heading); }
+
+/* ---- Validation States ---- */
+.vb-input.is-valid, .vb-select.is-valid, .vb-textarea.is-valid {
+  border-color: var(--success);
+}
+.vb-input.is-valid:focus, .vb-select.is-valid:focus {
+  box-shadow: 0 0 0 3px rgba(26, 138, 90, 0.15);
+}
+
+.vb-input.is-invalid, .vb-select.is-invalid, .vb-textarea.is-invalid {
+  border-color: var(--danger);
+}
+.vb-input.is-invalid:focus, .vb-select.is-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+
+.vb-field-error {
+  font-size: 0.8125rem;
+  color: var(--danger);
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.vb-field-hint {
+  font-size: 0.8125rem;
+  color: var(--body-muted);
+  margin-top: 5px;
+}
+
+/* ---- Checkbox & Radio ---- */
+.vb-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+.vb-check-input {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-white);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all var(--transition-fast);
+  accent-color: var(--navy);
+}
+.vb-check-input:checked {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.vb-check-label {
+  font-size: 0.875rem;
+  color: var(--body);
+  line-height: 1.5;
+}
+
+.vb-radio-input {
+  border-radius: 50%;
+}
+
+/* ---- Form Row Grid ---- */
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* ---- Form Card ---- */
+.vb-form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Search Bar ---- */
+.vb-search-bar {
+  position: relative;
+  max-width: 400px;
+}
+.vb-search-bar .vb-input {
+  padding-left: 42px;
+  padding-right: 36px;
+  border-radius: var(--radius-full);
+}
+.vb-search-bar .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--body-muted);
+  font-size: 0.875rem;
+  pointer-events: none;
+}
+.vb-search-bar .search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--body-muted);
+  font-size: 0.8125rem;
+  display: none;
+  padding: 4px;
+}
+.vb-search-bar .search-clear.visible { display: block; }
+
+/* ---- Filter Bar ---- */
+.vb-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-4);
+}
+.filter-bar-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--heading);
+  white-space: nowrap;
+}
+.filter-select-sm {
+  font-size: 0.8125rem;
+  padding: 6px 30px 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-white);
+  color: var(--body);
+  font-family: var(--font-body);
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2365727A' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  transition: border-color var(--transition-fast);
+}
+.filter-select-sm:focus { border-color: var(--teal); outline: none; }
+
+/* ---- Enrollment Steps ---- */
+.enrollment-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: var(--space-6);
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.enroll-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.enroll-step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--body-muted);
+  flex-shrink: 0;
+}
+.enroll-step.done .enroll-step-dot {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+.enroll-step.active .enroll-step-dot {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(24,59,86,0.15);
+}
+.enroll-step-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--body-muted);
+  white-space: nowrap;
+}
+.enroll-step.active .enroll-step-label { color: var(--navy); }
+.enroll-step.done .enroll-step-label { color: var(--success); }
+.enroll-connector {
+  height: 2px;
+  width: 32px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.enroll-connector.done { background: var(--success); }

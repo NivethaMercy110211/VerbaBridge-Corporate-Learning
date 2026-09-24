@@ -1,0 +1,22 @@
+/* =========================================================
+   VerbaBridge — desktop.css
+   Desktop-specific overrides (1200px+)
+   ========================================================= */
+
+@media (min-width: 1200px) {
+  .vb-hero { min-height: 620px; }
+  .hero-headline { font-size: 3.25rem; }
+  .kpi-grid { grid-template-columns: repeat(4, 1fr); }
+  .programs-grid { grid-template-columns: repeat(3, 1fr); }
+  .cs-grid { grid-template-columns: repeat(3, 1fr); }
+  .reports-grid { grid-template-columns: repeat(2, 1fr); }
+  .report-filter-form { grid-template-columns: repeat(4, 1fr); }
+  .cs-meta-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---- Wide dashboard sidebar always visible ---- */
+@media (min-width: 1024px) {
+  .vb-sidebar { transform: none !important; }
+  .vb-overlay.sidebar-overlay { display: none !important; }
+  .sidebar-drawer-toggle { display: none !important; }
+}

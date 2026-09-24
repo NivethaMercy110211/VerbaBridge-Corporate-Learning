@@ -1,0 +1,116 @@
+/* VerbaBridge banner and CTA entrance motion */
+.motion-ready .vb-hero-bg,
+.motion-ready .vb-page-banner-bg,
+.motion-ready .vb-cta-bg {
+  transform: scale(1.045);
+  transition: transform 1.8s cubic-bezier(.2,.75,.25,1), opacity .6s ease;
+  will-change: transform;
+}
+.motion-ready.motion-visible .vb-hero-bg,
+.motion-ready.motion-visible .vb-page-banner-bg,
+.motion-ready.motion-visible .vb-cta-bg {
+  transform: scale(1);
+  animation: vb-banner-drift 9s ease-in-out 1.8s infinite alternate;
+}
+
+.motion-ready::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,.13) 46%, transparent 68%);
+  transform: translateX(-115%);
+}
+
+.motion-ready.motion-visible::after {
+  animation: vb-banner-light-sweep 5.5s ease-in-out 1s infinite;
+}
+
+.motion-ready .vb-hero-content > *,
+.motion-ready .vb-page-banner-content > *,
+.motion-ready.vb-hero .vb-container > .row > * {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.75,.25,1);
+}
+
+.vb-cta-content,
+.vb-cta-inner {
+  position: relative;
+  z-index: 10;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.vb-cta-content > *,
+.vb-cta-inner > * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 10;
+}
+
+.motion-ready.motion-visible :is(.vb-hero-content,.vb-page-banner-content,.vb-cta-content,.vb-cta-inner) > :nth-child(2) { transition-delay: .1s; }
+.motion-ready.motion-visible :is(.vb-hero-content,.vb-page-banner-content,.vb-cta-content,.vb-cta-inner) > :nth-child(3) { transition-delay: .2s; }
+.motion-ready.motion-visible :is(.vb-hero-content,.vb-page-banner-content,.vb-cta-content,.vb-cta-inner) > :nth-child(n+4) { transition-delay: .3s; }
+
+.motion-ready .vb-hero-overlay,
+.motion-ready .vb-page-banner-overlay,
+.motion-ready .vb-cta-overlay { opacity: .75; transition: opacity .9s ease; }
+.motion-ready.motion-visible .vb-hero-overlay,
+.motion-ready.motion-visible .vb-page-banner-overlay,
+.motion-ready.motion-visible .vb-cta-overlay { opacity: 1; }
+
+.hero-cta-group .btn-vb,
+.cta-btns .btn-vb,
+.vb-cta-buttons .btn-vb {
+  position: relative;
+  z-index: 12;
+}
+
+@keyframes vb-banner-drift {
+  from { transform: scale(1); background-position: 48% 50%; }
+  to { transform: scale(1.075); background-position: 53% 47%; }
+}
+
+@keyframes vb-banner-light-sweep {
+  0%, 62% { transform: translateX(-115%); opacity: 0; }
+  72% { opacity: .8; }
+  100% { transform: translateX(115%); opacity: 0; }
+}
+
+@keyframes vb-cta-pulse {
+  0%, 100% { transform: translateY(0); box-shadow: 0 8px 20px rgba(0,0,0,.14); }
+  50% { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0,0,0,.24); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready .vb-hero-bg,
+  .motion-ready .vb-page-banner-bg,
+  .motion-ready .vb-cta-bg,
+  .motion-ready .vb-hero-content > *,
+  .motion-ready .vb-page-banner-content > *,
+  .motion-ready .vb-cta-content > *,
+  .motion-ready .vb-cta-inner > *,
+  .motion-ready.vb-hero .vb-container > .row > *,
+    .motion-ready .vb-hero-overlay,
+    .motion-ready .vb-page-banner-overlay,
+    .motion-ready .vb-cta-overlay {
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+  .motion-ready::after { display: none; }
+  .motion-ready .vb-hero-bg,
+  .motion-ready .vb-page-banner-bg,
+  .motion-ready .vb-cta-bg { opacity: .85; }
+  .motion-ready .vb-hero-content > *,
+  .motion-ready .vb-page-banner-content > *,
+  .motion-ready .vb-cta-content > *,
+  .motion-ready .vb-cta-inner > *,
+  .motion-ready.vb-hero .vb-container > .row > *,
+  .motion-ready .vb-hero-overlay,
+  .motion-ready .vb-page-banner-overlay,
+  .motion-ready .vb-cta-overlay { opacity: 1; }
+}

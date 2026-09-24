@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Training Dashboard — VerbaBridge Corporate Learning</title>
+  <meta name="description" content="VerbaBridge HR portal dashboard for corporate L&D managers. Manage training enrollments, track attendance, monitor batch capacity and download reports.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="stylesheet" href="css/reports.css">
+  <link rel="stylesheet" href="css/dark-theme.css?v=2">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/site-fixes.css?v=36">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+
+<!-- ============================================================
+     SIDEBAR
+============================================================ -->
+<aside class="vb-sidebar" id="sidebar" aria-label="Dashboard navigation">
+  <!-- Sidebar Header -->
+  <a href="index.html" class="sidebar-brand" style="text-decoration:none;" aria-label="VerbaBridge Corporate Learning">
+    <div class="sidebar-logo-wrap">
+      <img src="assets/images/logo.png" alt="VerbaBridge Corporate Learning" class="vb-brand-img" height="38">
+    </div>
+  </a>
+  <button class="sidebar-mobile-close" id="sidebar-close" type="button" aria-label="Close sidebar menu">
+    <i class="ri-close-line" aria-hidden="true"></i>
+  </button>
+
+  <!-- Nav Groups -->
+  <nav class="sidebar-nav" id="sidebar-nav">
+    <div class="sidebar-nav-group">
+      <div class="sidebar-group-label">Overview</div>
+      <a class="sidebar-link active" data-section="dashboard" href="dashboard.html" id="nav-dashboard" aria-label="Dashboard overview">
+        <i class="ri-dashboard-line"></i>
+        <span>Dashboard</span>
+      </a>
+    </div>
+    <div class="sidebar-nav-group">
+      <div class="sidebar-group-label">People</div>
+      <a class="sidebar-link" data-section="employees" href="dashboard.html?view=employees" id="nav-employees">
+        <i class="ri-group-line"></i>
+        <span>Employees</span>
+        <span class="sidebar-badge">127</span>
+      </a>
+    </div>
+    <div class="sidebar-nav-group">
+      <div class="sidebar-group-label">Training</div>
+      <a class="sidebar-link" data-section="programs" href="dashboard.html?view=programs" id="nav-programs">
+        <i class="ri-book-open-line"></i>
+        <span>Programs</span>
+      </a>
+      <a class="sidebar-link" data-section="calendar" href="dashboard.html?view=calendar" id="nav-calendar">
+        <i class="ri-calendar-line"></i>
+        <span>Calendar</span>
+      </a>
+    </div>
+    <div class="sidebar-nav-group">
+      <div class="sidebar-group-label">Analytics</div>
+      <a class="sidebar-link" data-section="reports" href="dashboard.html?view=reports" id="nav-reports">
+        <i class="ri-file-chart-line"></i>
+        <span>Reports</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Sidebar Footer -->
+  <div class="sidebar-footer">
+    <a href="hr-login.html" class="sidebar-logout" data-logout-trigger><i class="ri-logout-box-line"></i><span>Sign Out</span></a>
+  </div>
+</aside>
+
+<!-- ============================================================
+     MAIN CONTENT AREA
+============================================================ -->
+<main class="vb-dash-main" id="dash-main">
+
+  <!-- TOP BAR -->
+  <div class="dash-topbar">
+    <div class="dash-topbar-left">
+      <button class="sidebar-drawer-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+        <i class="ri-menu-line"></i>
+      </button>
+      <nav class="dash-breadcrumb" aria-label="Breadcrumb">
+        <span class="dash-breadcrumb-home"><i class="ri-home-3-line"></i></span>
+        <i class="ri-arrow-right-s-line" style="color:var(--body-muted);"></i>
+        <span id="breadcrumb-current" class="dash-breadcrumb-current">Dashboard</span>
+      </nav>
+    </div>
+    <div class="dash-topbar-right">
+      <div class="dash-search">
+        <i class="ri-search-line search-icon"></i>
+        <input type="text" id="dash-search-input" placeholder="Search employees, programs..." aria-label="Search dashboard">
+      </div>
+      <button class="dash-notif-btn" id="btn-dash-notif" aria-label="Notifications">
+        <i class="ri-notification-3-line"></i>
+        <span class="notif-dot"></span>
+      </button>
+      <button class="vb-theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="ri-moon-line"></i></button>
+      <button class="vb-rtl-toggle" data-rtl-toggle aria-label="Toggle RTL"><span>RTL</span></button>
+      <div class="dash-profile">
+        <button class="dash-user-chip" id="dash-profile-toggle" type="button" aria-label="Open profile menu" aria-expanded="false" aria-controls="dash-profile-menu">
+          <img class="dash-profile-image" src="assets/images/auth/login.jpg" alt="Sophia Mitchell">
+          <span class="d-none d-lg-inline dash-user-name">Sophia M.</span>
+          <i class="ri-arrow-down-s-line dash-profile-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="dash-profile-menu" id="dash-profile-menu" role="menu" aria-hidden="true">
+          <div class="dash-profile-summary">
+            <img class="dash-profile-image dash-profile-image-lg" src="assets/images/auth/login.jpg" alt="">
+            <div><strong>Sophia Mitchell</strong><span>L&amp;D Manager</span></div>
+          </div>
+          <div class="dash-profile-menu-label">Admin</div>
+          <a class="dash-profile-link" data-section="settings" href="dashboard.html?view=settings" id="nav-settings" role="menuitem">
+            <i class="ri-settings-3-line"></i><span>Settings</span>
+          </a>
+          <a class="dash-profile-link" data-section="notifications" href="dashboard.html?view=notifications" id="nav-notifications" role="menuitem">
+            <i class="ri-notification-3-line"></i><span>Notifications</span><span class="profile-menu-badge">5</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT WRAPPER -->
+  <div class="dash-content">
+
+    <!-- ===================================================
+         SECTION: DASHBOARD OVERVIEW
+    =================================================== -->
+    <div class="dash-section active" id="section-dashboard">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Dashboard</h1>
+          <p class="dash-page-subtitle">Welcome back, Sophia. Here's your training overview for this quarter.</p>
+        </div>
+        <div class="dash-page-actions">
+          <a href="#enrollment" data-section="enrollment" class="btn-vb btn-vb-primary nav-to-section" id="btn-dash-enroll">
+            <i class="ri-user-add-line"></i> Enroll Employees
+          </a>
+        </div>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-card-icon navy"><i class="ri-group-line"></i></div>
+            <span class="vb-badge badge-success" style="font-size:0.6875rem;"><i class="ri-arrow-up-line"></i> +14%</span>
+          </div>
+          <div class="stat-value" id="kpi-enrolled">127</div>
+          <div class="stat-label">Enrolled Employees</div>
+          <div class="stat-sub">+16 this quarter</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-card-icon teal"><i class="ri-calendar-check-line"></i></div>
+            <span class="vb-badge badge-success" style="font-size:0.6875rem;"><i class="ri-arrow-up-line"></i> +3%</span>
+          </div>
+          <div class="stat-value">87%</div>
+          <div class="stat-label">Average Attendance</div>
+          <div class="stat-sub">Across active batches</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-card-icon success"><i class="ri-checkbox-circle-line"></i></div>
+            <span class="vb-badge badge-neutral" style="font-size:0.6875rem;">This Q</span>
+          </div>
+          <div class="stat-value">42</div>
+          <div class="stat-label">Completed Programs</div>
+          <div class="stat-sub">+8 vs last quarter</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-card-icon warning"><i class="ri-award-line"></i></div>
+            <span class="vb-badge badge-neutral" style="font-size:0.6875rem;">Issued</span>
+          </div>
+          <div class="stat-value">38</div>
+          <div class="stat-label">Certificates Issued</div>
+          <div class="stat-sub">4 pending review</div>
+        </div>
+      </div>
+
+      <!-- Main 2-col grid -->
+      <div class="dash-grid-main-aside">
+        <!-- Recent Enrollments -->
+        <div class="dash-panel">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">Recent Enrollments</div>
+            <button class="btn-action teal" data-section="employees" id="btn-dash-viewall-enroll">View All</button>
+          </div>
+          <div class="dash-panel-body">
+            <div class="recent-enroll-item">
+              <div class="recent-avatar">AK</div>
+              <div class="recent-info">
+                <div class="recent-name">Arjun Kumar</div>
+                <div class="recent-prog">Business English — Intermediate</div>
+              </div>
+              <div class="recent-meta">
+                <span class="vb-badge badge-success">Active</span>
+                <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Sep 15</div>
+              </div>
+            </div>
+            <div class="recent-enroll-item">
+              <div class="recent-avatar">LM</div>
+              <div class="recent-info">
+                <div class="recent-name">Lin Mei</div>
+                <div class="recent-prog">Presentation Skills</div>
+              </div>
+              <div class="recent-meta">
+                <span class="vb-badge badge-success">Active</span>
+                <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Sep 14</div>
+              </div>
+            </div>
+            <div class="recent-enroll-item">
+              <div class="recent-avatar">JO</div>
+              <div class="recent-info">
+                <div class="recent-name">James Owusu</div>
+                <div class="recent-prog">Cross-Cultural Communication</div>
+              </div>
+              <div class="recent-meta">
+                <span class="vb-badge badge-neutral">Pending</span>
+                <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Sep 13</div>
+              </div>
+            </div>
+            <div class="recent-enroll-item">
+              <div class="recent-avatar">FR</div>
+              <div class="recent-info">
+                <div class="recent-name">Fatima Rashid</div>
+                <div class="recent-prog">Business English — Foundation</div>
+              </div>
+              <div class="recent-meta">
+                <span class="vb-badge badge-success">Active</span>
+                <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Sep 12</div>
+              </div>
+            </div>
+            <div class="recent-enroll-item">
+              <div class="recent-avatar">SP</div>
+              <div class="recent-info">
+                <div class="recent-name">Samara Petrov</div>
+                <div class="recent-prog">Leadership Communication</div>
+              </div>
+              <div class="recent-meta">
+                <span class="vb-badge badge-success">Active</span>
+                <div style="font-size:0.75rem; color:var(--body-muted); margin-top:2px;">Sep 11</div>
+              </div>
+            </div>
+          </div>
+          <div class="dash-panel-footer">
+            <span style="font-size:0.8125rem; color:var(--body-muted);">Showing 5 of 127 employees</span>
+            <a href="#employees" data-section="employees" class="btn-action teal nav-to-section">See All Employees</a>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="d-flex flex-column gap-4">
+          <!-- Upcoming Sessions -->
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <div class="dash-panel-title">Upcoming Sessions</div>
+              <button class="btn-action teal" data-section="calendar">View Calendar</button>
+            </div>
+            <div class="dash-panel-body" style="padding:0;">
+              <div class="upcoming-item">
+                <div class="upcoming-date-box">
+                  <span class="upcoming-date-month">Sep</span>
+                  <span class="upcoming-date-day">22</span>
+                </div>
+                <div class="upcoming-info">
+                  <div class="upcoming-prog">Business English — Batch A</div>
+                  <div class="upcoming-meta"><i class="ri-time-line"></i> 10:00 – 11:30 AM <span class="ms-2"><i class="ri-video-line"></i> Online</span></div>
+                </div>
+              </div>
+              <div class="upcoming-item">
+                <div class="upcoming-date-box">
+                  <span class="upcoming-date-month">Sep</span>
+                  <span class="upcoming-date-day">24</span>
+                </div>
+                <div class="upcoming-info">
+                  <div class="upcoming-prog">Presentation Skills</div>
+                  <div class="upcoming-meta"><i class="ri-time-line"></i> 2:00 – 4:00 PM <span class="ms-2"><i class="ri-building-4-line"></i> In-Person</span></div>
+                </div>
+              </div>
+              <div class="upcoming-item" style="border-bottom:none;">
+                <div class="upcoming-date-box">
+                  <span class="upcoming-date-month">Sep</span>
+                  <span class="upcoming-date-day">26</span>
+                </div>
+                <div class="upcoming-info">
+                  <div class="upcoming-prog">Cross-Cultural Communication</div>
+                  <div class="upcoming-meta"><i class="ri-time-line"></i> 11:00 AM – 12:30 PM <span class="ms-2"><i class="ri-merge-cells-horizontal"></i> Hybrid</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Department Progress -->
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <div class="dash-panel-title">Dept. Participation</div>
+              <button class="btn-action teal" data-section="reports">Full Report</button>
+            </div>
+            <div class="dash-panel-body">
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Sales</span><span>87%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:87%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Customer Support</span><span>74%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:74%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Operations</span><span>61%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:61%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Engineering</span><span>53%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:53%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Finance</span><span>46%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:46%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Training Analytics Flow -->
+      <section class="dash-panel analytics-flow-panel" aria-labelledby="analytics-flow-title">
+        <div class="dash-panel-header analytics-flow-header">
+          <div>
+            <div class="dash-panel-title" id="analytics-flow-title">Training Performance Flow</div>
+            <p class="analytics-flow-subtitle">Learner progression and monthly active participation</p>
+          </div>
+          <span class="analytics-period"><i class="ri-calendar-line"></i> This quarter</span>
+        </div>
+        <div class="analytics-flow-body">
+          <div class="learner-flow" aria-label="Learner progression from enrollment to certification">
+            <div class="flow-stage">
+              <span class="flow-stage-icon navy"><i class="ri-user-add-line"></i></span>
+              <span class="flow-stage-value">127</span>
+              <span class="flow-stage-label">Enrolled</span>
+            </div>
+            <div class="flow-connector"><span>91%</span><i class="ri-arrow-right-line"></i></div>
+            <div class="flow-stage">
+              <span class="flow-stage-icon teal"><i class="ri-play-circle-line"></i></span>
+              <span class="flow-stage-value">116</span>
+              <span class="flow-stage-label">Active</span>
+            </div>
+            <div class="flow-connector"><span>78%</span><i class="ri-arrow-right-line"></i></div>
+            <div class="flow-stage">
+              <span class="flow-stage-icon success"><i class="ri-checkbox-circle-line"></i></span>
+              <span class="flow-stage-value">42</span>
+              <span class="flow-stage-label">Completed</span>
+            </div>
+            <div class="flow-connector"><span>90%</span><i class="ri-arrow-right-line"></i></div>
+            <div class="flow-stage">
+              <span class="flow-stage-icon warning"><i class="ri-award-line"></i></span>
+              <span class="flow-stage-value">38</span>
+              <span class="flow-stage-label">Certified</span>
+            </div>
+          </div>
+
+          <div class="analytics-trend">
+            <div class="analytics-chart-heading">
+              <div><strong>Monthly active learners</strong><span>Up 18% since April</span></div>
+              <div class="analytics-chart-total"><span></span> Active learners</div>
+            </div>
+            <div class="analytics-chart" role="img" aria-label="Monthly active learners increased from 68 in April to 116 in September">
+              <svg viewBox="0 0 760 210" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="analyticsArea" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2d7c7a" stop-opacity="0.34"/>
+                    <stop offset="100%" stop-color="#2d7c7a" stop-opacity="0.02"/>
+                  </linearGradient>
+                </defs>
+                <g class="analytics-grid-lines">
+                  <line x1="20" y1="35" x2="740" y2="35"/><line x1="20" y1="85" x2="740" y2="85"/>
+                  <line x1="20" y1="135" x2="740" y2="135"/><line x1="20" y1="185" x2="740" y2="185"/>
+                </g>
+                <path class="analytics-area" d="M20 160 C95 150 115 142 164 136 S260 118 308 122 S402 88 452 98 S550 72 596 79 S690 45 740 50 L740 185 L20 185 Z"/>
+                <path class="analytics-line" d="M20 160 C95 150 115 142 164 136 S260 118 308 122 S402 88 452 98 S550 72 596 79 S690 45 740 50"/>
+                <g class="analytics-points">
+                  <circle cx="20" cy="160" r="5"/><circle cx="164" cy="136" r="5"/><circle cx="308" cy="122" r="5"/>
+                  <circle cx="452" cy="98" r="5"/><circle cx="596" cy="79" r="5"/><circle cx="740" cy="50" r="5"/>
+                </g>
+              </svg>
+              <div class="analytics-axis"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================================================
+         SECTION: EMPLOYEES
+    =================================================== -->
+    <div class="dash-section" id="section-employees">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Employee Directory</h1>
+          <p class="dash-page-subtitle">127 enrolled employees across 5 active programs</p>
+        </div>
+        <div class="dash-page-actions">
+          <button class="btn-vb btn-vb-ghost" id="btn-export-employees"><i class="ri-download-line"></i> Export</button>
+          <button class="btn-vb btn-vb-primary" id="btn-add-employee" data-section="enrollment"><i class="ri-user-add-line"></i> Add Employee</button>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="vb-table-wrap">
+        <div class="table-toolbar">
+          <div class="table-toolbar-left">
+            <div class="dash-search" style="max-width:260px;">
+              <i class="ri-search-line search-icon"></i>
+              <input type="text" placeholder="Search employees..." id="emp-search" aria-label="Search employees">
+            </div>
+            <select class="filter-select-sm" id="emp-dept-filter" aria-label="Filter by department">
+              <option value="">All Departments</option>
+              <option>Sales</option>
+              <option>Engineering</option>
+              <option>Operations</option>
+              <option>Customer Support</option>
+              <option>Finance</option>
+            </select>
+            <select class="filter-select-sm" id="emp-status-filter" aria-label="Filter by status">
+              <option value="">All Status</option>
+              <option>Active</option>
+              <option>Pending</option>
+              <option>Completed</option>
+            </select>
+          </div>
+          <span class="table-count">127 employees</span>
+        </div>
+
+        <table class="vb-table" aria-label="Employee training table">
+          <thead>
+            <tr>
+              <th style="width:24px;"><input type="checkbox" id="select-all-emp" aria-label="Select all"></th>
+              <th>Employee</th>
+              <th>Department</th>
+              <th>Program Enrolled</th>
+              <th>Batch</th>
+              <th>Status</th>
+              <th>Progress</th>
+              <th style="width:60px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" aria-label="Select Arjun Kumar"></td>
+              <td>
+                <div class="table-emp-cell">
+                  <div class="table-emp-avatar">AK</div>
+                  <div>
+                    <div class="table-emp-name">Arjun Kumar</div>
+                    <div class="table-emp-email">a.kumar@company.com</div>
+                  </div>
+                </div>
+              </td>
+              <td><span style="font-size:0.875rem;">Engineering</span></td>
+              <td><span style="font-size:0.875rem; color:var(--heading); font-weight:500;">Business English</span></td>
+              <td><span class="vb-badge badge-neutral">BE-2026-A</span></td>
+              <td><span class="vb-badge badge-success">Active</span></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:65%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted); white-space:nowrap;">65%</span>
+                </div>
+              </td>
+              <td>
+                <div class="table-context-menu">
+                  <button class="table-action-btn" data-context-trigger aria-label="Actions for Arjun Kumar"><i class="ri-more-2-fill"></i></button>
+                  <div class="context-menu-dropdown">
+                    <div class="context-menu-item"><i class="ri-eye-line"></i> View Profile</div>
+                    <div class="context-menu-item"><i class="ri-edit-line"></i> Edit Enrollment</div>
+                    <div class="context-menu-item"><i class="ri-award-line"></i> Issue Certificate</div>
+                    <div class="context-menu-item danger"><i class="ri-user-unfollow-line"></i> Unenroll</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" aria-label="Select Lin Mei"></td>
+              <td>
+                <div class="table-emp-cell">
+                  <div class="table-emp-avatar">LM</div>
+                  <div>
+                    <div class="table-emp-name">Lin Mei</div>
+                    <div class="table-emp-email">l.mei@company.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>Sales</td>
+              <td><span style="font-size:0.875rem; color:var(--heading); font-weight:500;">Presentation Skills</span></td>
+              <td><span class="vb-badge badge-neutral">PS-2026-B</span></td>
+              <td><span class="vb-badge badge-success">Active</span></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:45%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">45%</span>
+                </div>
+              </td>
+              <td>
+                <div class="table-context-menu">
+                  <button class="table-action-btn" data-context-trigger><i class="ri-more-2-fill"></i></button>
+                  <div class="context-menu-dropdown">
+                    <div class="context-menu-item"><i class="ri-eye-line"></i> View Profile</div>
+                    <div class="context-menu-item"><i class="ri-edit-line"></i> Edit Enrollment</div>
+                    <div class="context-menu-item danger"><i class="ri-user-unfollow-line"></i> Unenroll</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" aria-label="Select James Owusu"></td>
+              <td>
+                <div class="table-emp-cell">
+                  <div class="table-emp-avatar">JO</div>
+                  <div>
+                    <div class="table-emp-name">James Owusu</div>
+                    <div class="table-emp-email">j.owusu@company.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>Operations</td>
+              <td><span style="font-size:0.875rem; color:var(--heading); font-weight:500;">Cross-Cultural Comm.</span></td>
+              <td><span class="vb-badge badge-neutral">CC-2026-A</span></td>
+              <td><span class="vb-badge badge-warning">Pending</span></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:0%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">0%</span>
+                </div>
+              </td>
+              <td>
+                <div class="table-context-menu">
+                  <button class="table-action-btn" data-context-trigger><i class="ri-more-2-fill"></i></button>
+                  <div class="context-menu-dropdown">
+                    <div class="context-menu-item"><i class="ri-eye-line"></i> View Profile</div>
+                    <div class="context-menu-item"><i class="ri-check-line"></i> Approve Enrollment</div>
+                    <div class="context-menu-item danger"><i class="ri-close-line"></i> Cancel Enrollment</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" aria-label="Select Fatima Rashid"></td>
+              <td>
+                <div class="table-emp-cell">
+                  <div class="table-emp-avatar">FR</div>
+                  <div>
+                    <div class="table-emp-name">Fatima Rashid</div>
+                    <div class="table-emp-email">f.rashid@company.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>Customer Support</td>
+              <td><span style="font-size:0.875rem; color:var(--heading); font-weight:500;">Business English</span></td>
+              <td><span class="vb-badge badge-neutral">BE-2026-B</span></td>
+              <td><span class="vb-badge badge-success">Active</span></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:80%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">80%</span>
+                </div>
+              </td>
+              <td>
+                <div class="table-context-menu">
+                  <button class="table-action-btn" data-context-trigger><i class="ri-more-2-fill"></i></button>
+                  <div class="context-menu-dropdown">
+                    <div class="context-menu-item"><i class="ri-eye-line"></i> View Profile</div>
+                    <div class="context-menu-item"><i class="ri-award-line"></i> Issue Certificate</div>
+                    <div class="context-menu-item danger"><i class="ri-user-unfollow-line"></i> Unenroll</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" aria-label="Select Samara Petrov"></td>
+              <td>
+                <div class="table-emp-cell">
+                  <div class="table-emp-avatar">SP</div>
+                  <div>
+                    <div class="table-emp-name">Samara Petrov</div>
+                    <div class="table-emp-email">s.petrov@company.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>Finance</td>
+              <td><span style="font-size:0.875rem; color:var(--heading); font-weight:500;">Leadership Communication</span></td>
+              <td><span class="vb-badge badge-neutral">LC-2026-A</span></td>
+              <td><span class="vb-badge badge-info">Completed</span></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:100%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--success);">100%</span>
+                </div>
+              </td>
+              <td>
+                <div class="table-context-menu">
+                  <button class="table-action-btn" data-context-trigger><i class="ri-more-2-fill"></i></button>
+                  <div class="context-menu-dropdown">
+                    <div class="context-menu-item"><i class="ri-award-line"></i> Download Certificate</div>
+                    <div class="context-menu-item"><i class="ri-eye-line"></i> View Profile</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Table Footer -->
+        <div class="table-footer">
+          <span class="table-count">Showing 5 of 127 employees</span>
+          <div class="table-pagination">
+            <button class="page-btn" aria-label="Previous page"><i class="ri-arrow-left-s-line"></i></button>
+            <button class="page-btn active" aria-label="Page 1">1</button>
+            <button class="page-btn" aria-label="Page 2">2</button>
+            <button class="page-btn" aria-label="Page 3">3</button>
+            <span class="page-btn" style="pointer-events:none; border:none; background:none;">...</span>
+            <button class="page-btn" aria-label="Page 26">26</button>
+            <button class="page-btn" aria-label="Next page"><i class="ri-arrow-right-s-line"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: ENROLLMENT
+    =================================================== -->
+    <div class="dash-section" id="section-enrollment">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Enroll Employees</h1>
+          <p class="dash-page-subtitle">Add employees to training programs and assign them to available batches.</p>
+        </div>
+      </div>
+
+      <!-- Enrollment Stepper -->
+      <div class="enrollment-steps mb-5">
+        <div class="enroll-step active" data-enroll-step="1">
+          <div class="enroll-step-num active">1</div>
+          <div class="enroll-step-label">Select Employees</div>
+        </div>
+        <div class="enroll-connector"></div>
+        <div class="enroll-step" data-enroll-step="2">
+          <div class="enroll-step-num">2</div>
+          <div class="enroll-step-label">Choose Program</div>
+        </div>
+        <div class="enroll-connector"></div>
+        <div class="enroll-step" data-enroll-step="3">
+          <div class="enroll-step-num">3</div>
+          <div class="enroll-step-label">Assign Batch</div>
+        </div>
+        <div class="enroll-connector"></div>
+        <div class="enroll-step" data-enroll-step="4">
+          <div class="enroll-step-num">4</div>
+          <div class="enroll-step-label">Confirm</div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="vb-form-card">
+            <div class="vb-form-card-header">
+              <h3 class="vb-form-card-title">Enrollment Details</h3>
+            </div>
+            <div class="form-row-2">
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="enroll-fname">First Name</label>
+                <input type="text" class="vb-input" id="enroll-fname" placeholder="Employee first name">
+              </div>
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="enroll-lname">Last Name</label>
+                <input type="text" class="vb-input" id="enroll-lname" placeholder="Employee last name">
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="enroll-email">Work Email</label>
+                <input type="email" class="vb-input" id="enroll-email" placeholder="employee@company.com">
+              </div>
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="enroll-dept">Department</label>
+                <select class="vb-select" id="enroll-dept">
+                  <option value="">Select department</option>
+                  <option>Sales</option>
+                  <option>Engineering</option>
+                  <option>Operations</option>
+                  <option>Customer Support</option>
+                  <option>Finance</option>
+                  <option>HR</option>
+                  <option>Management</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="enroll-program">Training Program</label>
+                <select class="vb-select" id="enroll-program">
+                  <option value="">Select program</option>
+                  <option>Business English</option>
+                  <option>Presentation Skills</option>
+                  <option>Cross-Cultural Communication</option>
+                  <option>Leadership Communication</option>
+                  <option>Business Writing</option>
+                  <option>Email Etiquette</option>
+                </select>
+              </div>
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="enroll-level">Level</label>
+                <select class="vb-select" id="enroll-level">
+                  <option value="">Select level</option>
+                  <option>Foundation</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="enroll-batch">Assign to Batch</label>
+                <select class="vb-select" id="enroll-batch">
+                  <option value="">Select batch</option>
+                  <option>BE-2026-A (Business English — 3 seats available)</option>
+                  <option>BE-2026-B (Business English — 8 seats available)</option>
+                  <option>PS-2026-A (Presentation Skills — 2 seats available)</option>
+                  <option>CC-2026-A (Cross-Cultural — 5 seats available)</option>
+                </select>
+              </div>
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="enroll-start">Expected Start Date</label>
+                <input type="date" class="vb-input" id="enroll-start">
+              </div>
+            </div>
+            <div class="vb-form-group">
+              <label class="vb-form-label" for="enroll-notes">Notes (optional)</label>
+              <textarea class="vb-textarea" id="enroll-notes" placeholder="Any specific requirements or notes for this enrollment..." rows="3"></textarea>
+            </div>
+            <div class="d-flex gap-3">
+              <button class="btn-vb btn-vb-ghost">Reset Form</button>
+              <button class="btn-vb btn-vb-primary" id="btn-enroll-submit"><i class="ri-user-add-line"></i> Confirm Enrollment</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="dash-panel h-auto">
+            <div class="dash-panel-header"><div class="dash-panel-title">Enrollment Tips</div></div>
+            <div class="dash-panel-body">
+              <div class="d-flex flex-column gap-3">
+                <div class="info-row" style="align-items:flex-start; gap:10px;"><i class="ri-information-line" style="color:var(--teal); margin-top:2px; flex-shrink:0;"></i><span style="font-size:0.875rem; color:var(--body);">Check batch availability in the Batches section before enrolling</span></div>
+                <div class="info-row" style="align-items:flex-start; gap:10px;"><i class="ri-information-line" style="color:var(--teal); margin-top:2px; flex-shrink:0;"></i><span style="font-size:0.875rem; color:var(--body);">The employee will receive a confirmation email with session details</span></div>
+                <div class="info-row" style="align-items:flex-start; gap:10px;"><i class="ri-information-line" style="color:var(--teal); margin-top:2px; flex-shrink:0;"></i><span style="font-size:0.875rem; color:var(--body);">Use bulk enrollment for multiple employees in the same batch</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="dash-panel mt-4 h-auto">
+            <div class="dash-panel-header"><div class="dash-panel-title">Bulk Upload</div></div>
+            <div class="dash-panel-body">
+              <p style="font-size:0.875rem; color:var(--body); margin-bottom:16px;">Upload a CSV file to enroll multiple employees at once.</p>
+              <div style="border:2px dashed var(--border); border-radius:var(--radius-lg); padding:24px; text-align:center; cursor:pointer; transition:border-color 0.2s;" id="csv-dropzone">
+                <i class="ri-upload-cloud-2-line" style="font-size:2rem; color:var(--body-muted); margin-bottom:8px; display:block;"></i>
+                <div style="font-size:0.875rem; font-weight:500; color:var(--heading);">Drop CSV file here</div>
+                <div style="font-size:0.75rem; color:var(--body-muted); margin-top:4px;">or click to browse</div>
+              </div>
+              <a href="#" class="btn-vb btn-vb-ghost btn-vb-sm mt-3 btn-vb-block"><i class="ri-download-line"></i> Download CSV Template</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: PROGRAMS (simplified)
+    =================================================== -->
+    <div class="dash-section" id="section-programs">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Training Programs</h1>
+          <p class="dash-page-subtitle">Overview of programs your organization has enrolled employees in</p>
+        </div>
+        <div class="dash-page-actions">
+          <a href="programs.html" target="_blank" class="btn-vb btn-vb-secondary"><i class="ri-external-link-line"></i> Browse All Programs</a>
+          <button class="btn-vb btn-vb-primary" id="btn-prog-request"><i class="ri-phone-line"></i> Request New Program</button>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="dash-panel h-auto">
+            <div class="dash-panel-header">
+              <div>
+                <div class="dash-panel-title">Business English</div>
+                <div style="font-size:0.75rem; color:var(--body-muted);">2 active batches</div>
+              </div>
+              <span class="vb-badge badge-success">Active</span>
+            </div>
+            <div class="dash-panel-body">
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Enrollment</span><span>43/50</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:86%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Avg. Attendance</span><span>89%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:89%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Avg. Progress</span><span>62%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:62%;"></div></div>
+              </div>
+            </div>
+            <div class="dash-panel-footer">
+              <span style="font-size:0.8125rem; color:var(--body-muted);">Next session: Sep 22</span>
+              <button class="btn-action teal" data-section="batches">View Batches</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="dash-panel h-auto">
+            <div class="dash-panel-header">
+              <div>
+                <div class="dash-panel-title">Presentation Skills</div>
+                <div style="font-size:0.75rem; color:var(--body-muted);">1 active batch</div>
+              </div>
+              <span class="vb-badge badge-success">Active</span>
+            </div>
+            <div class="dash-panel-body">
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Enrollment</span><span>12/15</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:80%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Avg. Attendance</span><span>84%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:84%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Avg. Progress</span><span>48%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:48%;"></div></div>
+              </div>
+            </div>
+            <div class="dash-panel-footer">
+              <span style="font-size:0.8125rem; color:var(--body-muted);">Next session: Sep 24</span>
+              <button class="btn-action teal" data-section="batches">View Batches</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="dash-panel h-auto">
+            <div class="dash-panel-header">
+              <div>
+                <div class="dash-panel-title">Cross-Cultural Comm.</div>
+                <div style="font-size:0.75rem; color:var(--body-muted);">1 active batch</div>
+              </div>
+              <span class="vb-badge badge-success">Active</span>
+            </div>
+            <div class="dash-panel-body">
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Enrollment</span><span>18/20</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:90%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Avg. Attendance</span><span>91%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:91%;"></div></div>
+              </div>
+              <div class="dept-bar-item">
+                <div class="dept-bar-label"><span>Avg. Progress</span><span>74%</span></div>
+                <div class="vb-progress"><div class="vb-progress-bar" style="width:74%;"></div></div>
+              </div>
+            </div>
+            <div class="dash-panel-footer">
+              <span style="font-size:0.8125rem; color:var(--body-muted);">Next session: Sep 26</span>
+              <button class="btn-action teal" data-section="batches">View Batches</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: ATTENDANCE
+    =================================================== -->
+    <div class="dash-section" id="section-attendance">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Attendance</h1>
+          <p class="dash-page-subtitle">Session-by-session attendance records for all active batches</p>
+        </div>
+        <div class="dash-page-actions">
+          <button class="btn-vb btn-vb-ghost" id="btn-export-attendance"><i class="ri-download-line"></i> Export Attendance</button>
+        </div>
+      </div>
+
+      <div class="vb-table-wrap">
+        <div class="table-toolbar">
+          <div class="table-toolbar-left">
+            <select class="filter-select-sm" id="att-prog-filter" aria-label="Filter by program">
+              <option value="">All Programs</option>
+              <option>Business English</option>
+              <option>Presentation Skills</option>
+              <option>Cross-Cultural Communication</option>
+            </select>
+            <select class="filter-select-sm" id="att-batch-filter" aria-label="Filter by batch">
+              <option value="">All Batches</option>
+              <option>BE-2026-A</option>
+              <option>BE-2026-B</option>
+              <option>PS-2026-B</option>
+            </select>
+          </div>
+          <span class="table-count">48 session records</span>
+        </div>
+
+        <table class="vb-table" aria-label="Attendance records">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Program</th>
+              <th>Session Date</th>
+              <th>Session</th>
+              <th>Attendance</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">AK</div><div class="table-emp-name">Arjun Kumar</div></div></td>
+              <td>Business English</td>
+              <td>Sep 18, 2026</td>
+              <td>Session 6/12</td>
+              <td><span class="vb-badge badge-success">Present</span></td>
+              <td>90 min</td>
+            </tr>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">LM</div><div class="table-emp-name">Lin Mei</div></div></td>
+              <td>Presentation Skills</td>
+              <td>Sep 17, 2026</td>
+              <td>Session 4/8</td>
+              <td><span class="vb-badge badge-success">Present</span></td>
+              <td>120 min</td>
+            </tr>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">FR</div><div class="table-emp-name">Fatima Rashid</div></div></td>
+              <td>Business English</td>
+              <td>Sep 18, 2026</td>
+              <td>Session 6/12</td>
+              <td><span class="vb-badge badge-danger">Absent</span></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">SP</div><div class="table-emp-name">Samara Petrov</div></div></td>
+              <td>Leadership Comm.</td>
+              <td>Sep 16, 2026</td>
+              <td>Session 8/8</td>
+              <td><span class="vb-badge badge-success">Present</span></td>
+              <td>90 min</td>
+            </tr>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">JO</div><div class="table-emp-name">James Owusu</div></div></td>
+              <td>Cross-Cultural Comm.</td>
+              <td>Sep 15, 2026</td>
+              <td>Session 5/10</td>
+              <td><span class="vb-badge badge-warning">Late</span></td>
+              <td>60 min</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-footer">
+          <span class="table-count">Showing 5 of 48 records</span>
+          <div class="table-pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: PROGRESS
+    =================================================== -->
+    <div class="dash-section" id="section-progress">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Training Progress</h1>
+          <p class="dash-page-subtitle">Module-by-module completion tracking for all enrolled employees</p>
+        </div>
+        <div class="dash-page-actions">
+          <button class="btn-vb btn-vb-ghost" id="btn-export-progress"><i class="ri-download-line"></i> Export Progress Report</button>
+        </div>
+      </div>
+
+      <div class="vb-table-wrap">
+        <div class="table-toolbar">
+          <div class="table-toolbar-left">
+            <select class="filter-select-sm" id="prog-prog-filter">
+              <option>All Programs</option>
+              <option>Business English</option>
+              <option>Presentation Skills</option>
+            </select>
+          </div>
+        </div>
+        <table class="vb-table" aria-label="Employee progress table">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Program</th>
+              <th>Modules Completed</th>
+              <th>Overall Progress</th>
+              <th>Last Active</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">AK</div><div class="table-emp-name">Arjun Kumar</div></div></td>
+              <td>Business English</td>
+              <td>8/12 modules</td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:120px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:65%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">65%</span>
+                </div>
+              </td>
+              <td style="font-size:0.875rem; color:var(--body);">Sep 18</td>
+              <td><span class="vb-badge badge-success">On Track</span></td>
+            </tr>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">FR</div><div class="table-emp-name">Fatima Rashid</div></div></td>
+              <td>Business English</td>
+              <td>10/12 modules</td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:120px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:80%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">80%</span>
+                </div>
+              </td>
+              <td style="font-size:0.875rem; color:var(--body);">Sep 18</td>
+              <td><span class="vb-badge badge-success">On Track</span></td>
+            </tr>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">LM</div><div class="table-emp-name">Lin Mei</div></div></td>
+              <td>Presentation Skills</td>
+              <td>4/8 modules</td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:120px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:50%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">50%</span>
+                </div>
+              </td>
+              <td style="font-size:0.875rem; color:var(--body);">Sep 17</td>
+              <td><span class="vb-badge badge-success">On Track</span></td>
+            </tr>
+            <tr>
+              <td><div class="table-emp-cell"><div class="table-emp-avatar">SP</div><div class="table-emp-name">Samara Petrov</div></div></td>
+              <td>Leadership Comm.</td>
+              <td>8/8 modules</td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:120px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:100%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--success);">100%</span>
+                </div>
+              </td>
+              <td style="font-size:0.875rem; color:var(--body);">Sep 16</td>
+              <td><span class="vb-badge badge-info">Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-footer">
+          <span class="table-count">Showing 4 of 127 employees</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: BATCHES
+    =================================================== -->
+    <div class="dash-section" id="section-batches">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Training Batches</h1>
+          <p class="dash-page-subtitle">All active and upcoming training batches and their current seat availability</p>
+        </div>
+        <div class="dash-page-actions">
+          <button class="btn-vb btn-vb-primary" id="btn-request-batch"><i class="ri-phone-line"></i> Request New Batch</button>
+        </div>
+      </div>
+      <div class="row g-4">
+        <!-- Batch Cards -->
+        <div class="col-lg-6">
+          <div class="batch-card">
+            <div class="batch-card-left">
+              <div class="batch-program">Business English</div>
+              <div class="batch-id">BE-2026-A</div>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="vb-badge badge-success">Active</span>
+                <span class="vb-badge badge-neutral"><i class="ri-video-line"></i> Online</span>
+              </div>
+            </div>
+            <div class="batch-card-right">
+              <div class="batch-meta">
+                <div class="batch-meta-item"><i class="ri-group-line"></i><span>13/15</span></div>
+                <div class="batch-meta-item"><i class="ri-calendar-line"></i><span>Sep–Dec 2026</span></div>
+                <div class="batch-meta-item"><i class="ri-time-line"></i><span>Mon/Thu 10–11:30</span></div>
+              </div>
+              <div class="batch-seats">
+                <div class="batch-seats-label">Seats Available: <strong style="color:var(--teal);">2</strong></div>
+                <div class="batch-seat-bar"><div class="batch-seat-fill" style="width:87%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="batch-card">
+            <div class="batch-card-left">
+              <div class="batch-program">Business English</div>
+              <div class="batch-id">BE-2026-B</div>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="vb-badge badge-success">Active</span>
+                <span class="vb-badge badge-neutral"><i class="ri-video-line"></i> Online</span>
+              </div>
+            </div>
+            <div class="batch-card-right">
+              <div class="batch-meta">
+                <div class="batch-meta-item"><i class="ri-group-line"></i><span>7/15</span></div>
+                <div class="batch-meta-item"><i class="ri-calendar-line"></i><span>Oct–Jan 2026</span></div>
+                <div class="batch-meta-item"><i class="ri-time-line"></i><span>Tue/Fri 2–3:30</span></div>
+              </div>
+              <div class="batch-seats">
+                <div class="batch-seats-label">Seats Available: <strong style="color:var(--success);">8</strong></div>
+                <div class="batch-seat-bar"><div class="batch-seat-fill" style="width:47%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="batch-card">
+            <div class="batch-card-left">
+              <div class="batch-program">Presentation Skills</div>
+              <div class="batch-id">PS-2026-B</div>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="vb-badge badge-success">Active</span>
+                <span class="vb-badge badge-neutral"><i class="ri-building-4-line"></i> In-Person</span>
+              </div>
+            </div>
+            <div class="batch-card-right">
+              <div class="batch-meta">
+                <div class="batch-meta-item"><i class="ri-group-line"></i><span>10/12</span></div>
+                <div class="batch-meta-item"><i class="ri-calendar-line"></i><span>Sep–Oct 2026</span></div>
+                <div class="batch-meta-item"><i class="ri-time-line"></i><span>Wed 2–4 PM</span></div>
+              </div>
+              <div class="batch-seats">
+                <div class="batch-seats-label">Seats Available: <strong style="color:var(--warning);">2</strong></div>
+                <div class="batch-seat-bar"><div class="batch-seat-fill" style="width:83%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="batch-card">
+            <div class="batch-card-left">
+              <div class="batch-program">Cross-Cultural Comm.</div>
+              <div class="batch-id">CC-2026-A</div>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="vb-badge badge-warning">Upcoming</span>
+                <span class="vb-badge badge-neutral"><i class="ri-merge-cells-horizontal"></i> Hybrid</span>
+              </div>
+            </div>
+            <div class="batch-card-right">
+              <div class="batch-meta">
+                <div class="batch-meta-item"><i class="ri-group-line"></i><span>3/20</span></div>
+                <div class="batch-meta-item"><i class="ri-calendar-line"></i><span>Oct–Dec 2026</span></div>
+                <div class="batch-meta-item"><i class="ri-time-line"></i><span>Fri 11–12:30</span></div>
+              </div>
+              <div class="batch-seats">
+                <div class="batch-seats-label">Seats Available: <strong style="color:var(--success);">17</strong></div>
+                <div class="batch-seat-bar"><div class="batch-seat-fill" style="width:15%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: INTERACTIVE TRAINING CALENDAR
+    =================================================== -->
+    <div class="dash-section" id="section-calendar">
+      <div class="dash-page-header">
+        <div><h1 class="dash-page-title">Training Calendar</h1><p class="dash-page-subtitle">Plan, filter and review every active training session</p></div>
+        <div class="dash-page-actions"><button class="btn-vb btn-vb-primary" id="cal-add-session"><i class="ri-add-line"></i> Add Session</button></div>
+      </div>
+      <div class="calendar-summary-grid" aria-label="Calendar summary">
+        <div class="calendar-summary-card"><span class="calendar-summary-icon teal"><i class="ri-calendar-event-line"></i></span><div><strong id="cal-session-total">12</strong><span>Sessions this month</span></div></div>
+        <div class="calendar-summary-card"><span class="calendar-summary-icon navy"><i class="ri-group-line"></i></span><div><strong>118</strong><span>Expected attendees</span></div></div>
+        <div class="calendar-summary-card"><span class="calendar-summary-icon success"><i class="ri-video-line"></i></span><div><strong>7</strong><span>Online sessions</span></div></div>
+        <div class="calendar-summary-card"><span class="calendar-summary-icon warning"><i class="ri-building-line"></i></span><div><strong>5</strong><span>On-site / hybrid</span></div></div>
+      </div>
+      <div class="calendar-toolbar">
+        <div class="cal-nav"><button class="cal-nav-btn" id="cal-prev" aria-label="Previous month"><i class="ri-arrow-left-s-line"></i></button><div class="cal-month-label" id="cal-month-label" aria-live="polite">September 2026</div><button class="cal-nav-btn" id="cal-next" aria-label="Next month"><i class="ri-arrow-right-s-line"></i></button><button class="cal-today-btn" id="cal-today">Today</button></div>
+        <div class="calendar-filters"><label class="calendar-filter-search"><i class="ri-search-line"></i><input id="cal-search" type="search" placeholder="Search sessions" aria-label="Search calendar sessions"></label><select id="cal-program-filter" class="filter-select-sm" aria-label="Filter calendar by program"><option value="all">All programs</option><option value="business">Business English</option><option value="presentation">Presentation Skills</option><option value="cross-cultural">Cross-Cultural</option><option value="leadership">Leadership</option></select></div>
+      </div>
+      <div class="calendar-workspace">
+        <div class="vb-calendar"><div class="cal-weekdays" aria-hidden="true"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="cal-grid" id="cal-grid" aria-label="Monthly training calendar"></div></div>
+        <aside class="calendar-agenda" aria-labelledby="cal-agenda-title"><div class="calendar-agenda-header"><div><span id="cal-agenda-day">Tuesday</span><strong id="cal-agenda-title">September 22</strong></div><span class="calendar-agenda-count" id="cal-agenda-count">2 sessions</span></div><div class="calendar-agenda-list" id="cal-agenda-list"></div><div class="calendar-event-detail" id="cal-event-detail" aria-live="polite"><div class="calendar-empty-state"><i class="ri-cursor-line"></i><span>Select a session to see its details</span></div></div></aside>
+      </div>
+      <div class="cal-legend" aria-label="Session program legend"><div class="cal-legend-item"><span class="cal-legend-dot program-business"></span>Business English</div><div class="cal-legend-item"><span class="cal-legend-dot program-presentation"></span>Presentation Skills</div><div class="cal-legend-item"><span class="cal-legend-dot program-cross-cultural"></span>Cross-Cultural</div><div class="cal-legend-item"><span class="cal-legend-dot program-leadership"></span>Leadership</div></div>
+      <dialog class="calendar-dialog" id="cal-session-dialog" aria-labelledby="cal-dialog-title"><form method="dialog" id="cal-session-form"><div class="calendar-dialog-header"><div><span class="section-eyebrow">Schedule training</span><h2 id="cal-dialog-title">Add a New Session</h2></div><button type="button" class="calendar-dialog-close" id="cal-dialog-close" aria-label="Close dialog"><i class="ri-close-line"></i></button></div><div class="calendar-dialog-grid"><label class="vb-form-group"><span class="vb-form-label">Session title</span><input class="vb-input" id="cal-new-title" required placeholder="Business English — Batch A"></label><label class="vb-form-group"><span class="vb-form-label">Program</span><select class="vb-select" id="cal-new-program"><option value="business">Business English</option><option value="presentation">Presentation Skills</option><option value="cross-cultural">Cross-Cultural</option><option value="leadership">Leadership</option></select></label><label class="vb-form-group"><span class="vb-form-label">Date</span><input class="vb-input" id="cal-new-date" type="date" required value="2026-09-23"></label><label class="vb-form-group"><span class="vb-form-label">Start time</span><input class="vb-input" id="cal-new-time" type="time" required value="10:00"></label><label class="vb-form-group"><span class="vb-form-label">Delivery</span><select class="vb-select" id="cal-new-mode"><option>Online</option><option>In-Person</option><option>Hybrid</option></select></label><label class="vb-form-group"><span class="vb-form-label">Facilitator</span><input class="vb-input" id="cal-new-trainer" value="Maya Chen"></label></div><div class="calendar-dialog-actions"><button type="button" class="btn-vb btn-vb-ghost" id="cal-dialog-cancel">Cancel</button><button type="submit" class="btn-vb btn-vb-primary"><i class="ri-calendar-check-line"></i> Schedule Session</button></div></form></dialog>
+    </div>
+
+    <!-- ===================================================
+         SECTION: REPORTS
+    =================================================== -->
+    <div class="dash-section" id="section-reports">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Reports</h1>
+          <p class="dash-page-subtitle">Download training data reports for your organization</p>
+        </div>
+      </div>
+
+      <!-- Report Filters -->
+      <div class="report-filter-form">
+        <div class="vb-form-group" style="margin:0;">
+          <label class="vb-form-label">Program</label>
+          <select class="vb-select" id="report-prog-filter">
+            <option>All Programs</option>
+            <option>Business English</option>
+            <option>Presentation Skills</option>
+            <option>Cross-Cultural Comm.</option>
+          </select>
+        </div>
+        <div class="vb-form-group" style="margin:0;">
+          <label class="vb-form-label">Department</label>
+          <select class="vb-select" id="report-dept-filter">
+            <option>All Departments</option>
+            <option>Sales</option>
+            <option>Engineering</option>
+            <option>Operations</option>
+          </select>
+        </div>
+        <div class="vb-form-group" style="margin:0;">
+          <label class="vb-form-label">Date Range</label>
+          <select class="vb-select" id="report-date-filter">
+            <option>This Quarter</option>
+            <option>Last Quarter</option>
+            <option>Last 6 Months</option>
+            <option>This Year</option>
+            <option>Custom Range</option>
+          </select>
+        </div>
+        <div style="display:flex; align-items:flex-end;">
+          <button class="btn-vb btn-vb-primary btn-vb-block" id="btn-generate-report"><i class="ri-filter-line"></i> Apply Filters</button>
+        </div>
+      </div>
+
+      <div class="reports-grid">
+        <!-- Report 1: Enrollment -->
+        <div class="report-card">
+          <div class="report-card-top">
+            <div class="report-card-icon navy"><i class="ri-user-add-line"></i></div>
+            <div>
+              <div class="report-card-title">Enrollment Report</div>
+              <p class="report-card-desc">All enrolled employees with program, batch, enrollment date and current status.</p>
+            </div>
+          </div>
+          <div class="report-card-actions">
+            <button class="btn-vb btn-vb-primary btn-vb-sm" id="btn-download-enrollment"><i class="ri-download-line"></i> Download CSV</button>
+            <button class="btn-vb btn-vb-ghost btn-vb-sm"><i class="ri-file-pdf-line"></i> PDF</button>
+          </div>
+        </div>
+        <!-- Report 2: Attendance -->
+        <div class="report-card">
+          <div class="report-card-top">
+            <div class="report-card-icon teal"><i class="ri-calendar-check-line"></i></div>
+            <div>
+              <div class="report-card-title">Attendance Report</div>
+              <p class="report-card-desc">Session-by-session attendance records for all employees across active batches.</p>
+            </div>
+          </div>
+          <div class="report-card-actions">
+            <button class="btn-vb btn-vb-primary btn-vb-sm" id="btn-download-attendance"><i class="ri-download-line"></i> Download CSV</button>
+            <button class="btn-vb btn-vb-ghost btn-vb-sm"><i class="ri-file-pdf-line"></i> PDF</button>
+          </div>
+        </div>
+        <!-- Report 3: Progress -->
+        <div class="report-card">
+          <div class="report-card-top">
+            <div class="report-card-icon success"><i class="ri-bar-chart-box-line"></i></div>
+            <div>
+              <div class="report-card-title">Progress Report</div>
+              <p class="report-card-desc">Module completion progress per employee across all enrolled training programs.</p>
+            </div>
+          </div>
+          <div class="report-card-actions">
+            <button class="btn-vb btn-vb-primary btn-vb-sm" id="btn-download-progress"><i class="ri-download-line"></i> Download CSV</button>
+            <button class="btn-vb btn-vb-ghost btn-vb-sm"><i class="ri-file-pdf-line"></i> PDF</button>
+          </div>
+        </div>
+        <!-- Report 4: Department -->
+        <div class="report-card">
+          <div class="report-card-top">
+            <div class="report-card-icon warning"><i class="ri-building-2-line"></i></div>
+            <div>
+              <div class="report-card-title">Department Report</div>
+              <p class="report-card-desc">Training participation and completion rates organized by department.</p>
+            </div>
+          </div>
+          <div class="report-card-actions">
+            <button class="btn-vb btn-vb-primary btn-vb-sm" id="btn-download-dept"><i class="ri-download-line"></i> Download CSV</button>
+            <button class="btn-vb btn-vb-ghost btn-vb-sm"><i class="ri-file-pdf-line"></i> PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: CERTIFICATES
+    =================================================== -->
+    <div class="dash-section" id="section-certificates">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Certificates</h1>
+          <p class="dash-page-subtitle">Completion certificates issued to employees who have successfully completed training programs</p>
+        </div>
+        <div class="dash-page-actions">
+          <button class="btn-vb btn-vb-ghost" id="btn-export-certs"><i class="ri-download-line"></i> Export All</button>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Certificate Cards -->
+        <div class="col-lg-4 col-md-6">
+          <div class="cert-card">
+            <div class="cert-card-preview">
+              <div class="cert-card-preview-icon"><i class="ri-award-line"></i></div>
+              <div class="cert-card-preview-title">Leadership Communication</div>
+              <div class="cert-card-preview-id">Cert #VB-2026-001</div>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-card-name">Samara Petrov</div>
+              <div class="cert-card-prog">Leadership Communication</div>
+              <div class="cert-card-date"><i class="ri-calendar-check-line"></i> Issued: Sep 16, 2026</div>
+            </div>
+            <div class="cert-card-footer">
+              <button class="btn-vb btn-vb-primary btn-vb-sm" id="btn-cert-download-001"><i class="ri-download-line"></i> Download PDF</button>
+              <button class="btn-vb btn-vb-ghost btn-vb-sm"><i class="ri-share-line"></i> Share</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="cert-card">
+            <div class="cert-card-preview" style="background:linear-gradient(135deg, #1E4A6C, #183B56);">
+              <div class="cert-card-preview-icon"><i class="ri-award-line"></i></div>
+              <div class="cert-card-preview-title">Presentation Skills</div>
+              <div class="cert-card-preview-id">Cert #VB-2026-002</div>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-card-name">David Osei</div>
+              <div class="cert-card-prog">Presentation Skills</div>
+              <div class="cert-card-date"><i class="ri-calendar-check-line"></i> Issued: Aug 28, 2026</div>
+            </div>
+            <div class="cert-card-footer">
+              <button class="btn-vb btn-vb-primary btn-vb-sm"><i class="ri-download-line"></i> Download PDF</button>
+              <button class="btn-vb btn-vb-ghost btn-vb-sm"><i class="ri-share-line"></i> Share</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="cert-card">
+            <div class="cert-card-preview" style="background:linear-gradient(135deg, #2D7C7A, #1E4A6C);">
+              <div class="cert-card-preview-icon"><i class="ri-award-line"></i></div>
+              <div class="cert-card-preview-title">Business English</div>
+              <div class="cert-card-preview-id">Cert #VB-2026-003</div>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-card-name">Aiko Yamamoto</div>
+              <div class="cert-card-prog">Business English — Advanced</div>
+              <div class="cert-card-date"><i class="ri-calendar-check-line"></i> Issued: Aug 22, 2026</div>
+            </div>
+            <div class="cert-card-footer">
+              <button class="btn-vb btn-vb-primary btn-vb-sm"><i class="ri-download-line"></i> Download PDF</button>
+              <button class="btn-vb btn-vb-ghost btn-vb-sm"><i class="ri-share-line"></i> Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: CAPACITY
+    =================================================== -->
+    <div class="dash-section" id="section-capacity">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Batch Capacity</h1>
+          <p class="dash-page-subtitle">Monitor available seats and plan enrollments across all training batches</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center">
+            <div class="stat-card-icon navy mx-auto"><i class="ri-git-branch-line"></i></div>
+            <div class="stat-value">4</div>
+            <div class="stat-label">Active Batches</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center">
+            <div class="stat-card-icon success mx-auto"><i class="ri-user-follow-line"></i></div>
+            <div class="stat-value">33</div>
+            <div class="stat-label">Total Seats Used</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center">
+            <div class="stat-card-icon teal mx-auto"><i class="ri-user-add-line"></i></div>
+            <div class="stat-value">29</div>
+            <div class="stat-label">Available Seats</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center">
+            <div class="stat-card-icon warning mx-auto"><i class="ri-alarm-warning-line"></i></div>
+            <div class="stat-value">2</div>
+            <div class="stat-label">Near Capacity Batches</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vb-table-wrap mt-4">
+        <table class="vb-table" aria-label="Batch capacity table">
+          <thead>
+            <tr>
+              <th>Batch ID</th>
+              <th>Program</th>
+              <th>Delivery</th>
+              <th>Enrolled</th>
+              <th>Capacity</th>
+              <th>Available</th>
+              <th>Fill Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="vb-badge badge-neutral">BE-2026-A</span></td>
+              <td>Business English</td>
+              <td><span class="vb-badge badge-info"><i class="ri-video-line"></i> Online</span></td>
+              <td>13</td>
+              <td>15</td>
+              <td><strong style="color:var(--warning);">2</strong></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:87%; background:var(--warning);"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">87%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="vb-badge badge-neutral">BE-2026-B</span></td>
+              <td>Business English</td>
+              <td><span class="vb-badge badge-info"><i class="ri-video-line"></i> Online</span></td>
+              <td>7</td>
+              <td>15</td>
+              <td><strong style="color:var(--success);">8</strong></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:47%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">47%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="vb-badge badge-neutral">PS-2026-B</span></td>
+              <td>Presentation Skills</td>
+              <td><span class="vb-badge badge-navy"><i class="ri-building-4-line"></i> In-Person</span></td>
+              <td>10</td>
+              <td>12</td>
+              <td><strong style="color:var(--warning);">2</strong></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:83%; background:var(--warning);"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">83%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="vb-badge badge-neutral">CC-2026-A</span></td>
+              <td>Cross-Cultural Comm.</td>
+              <td><span class="vb-badge badge-teal"><i class="ri-merge-cells-horizontal"></i> Hybrid</span></td>
+              <td>3</td>
+              <td>20</td>
+              <td><strong style="color:var(--success);">17</strong></td>
+              <td>
+                <div style="display:flex; align-items:center; gap:8px; min-width:100px;">
+                  <div class="table-progress-bar-wrap" style="flex:1;"><div class="table-progress-bar" style="width:15%;"></div></div>
+                  <span style="font-size:0.75rem; color:var(--body-muted);">15%</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: SETTINGS
+    =================================================== -->
+    <div class="dash-section" id="section-settings">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Organization Settings</h1>
+          <p class="dash-page-subtitle">Manage your organization's VerbaBridge portal settings</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="vb-form-card mb-4">
+            <div class="vb-form-card-header"><h3 class="vb-form-card-title">Organization Profile</h3></div>
+            <div class="form-row-2">
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="settings-org-name">Organization Name</label>
+                <input type="text" class="vb-input" id="settings-org-name" value="Apex Solutions International">
+              </div>
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="settings-industry">Industry</label>
+                <select class="vb-select" id="settings-industry">
+                  <option selected>Technology</option>
+                  <option>Financial Services</option>
+                  <option>Manufacturing</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="settings-country">Country / Region</label>
+                <select class="vb-select" id="settings-country">
+                  <option selected>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Singapore</option>
+                </select>
+              </div>
+              <div class="vb-form-group">
+                <label class="vb-form-label" for="settings-size">Organization Size</label>
+                <select class="vb-select" id="settings-size">
+                  <option>50–200 employees</option>
+                  <option selected>201–500 employees</option>
+                  <option>501–1,000 employees</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn-vb btn-vb-primary" id="btn-save-settings"><i class="ri-save-line"></i> Save Changes</button>
+          </div>
+          <div class="vb-form-card">
+            <div class="vb-form-card-header"><h3 class="vb-form-card-title">HR Administrator</h3></div>
+            <div class="form-row-2">
+              <div class="vb-form-group">
+                <label class="vb-form-label">First Name</label>
+                <input type="text" class="vb-input" value="Sophia">
+              </div>
+              <div class="vb-form-group">
+                <label class="vb-form-label">Last Name</label>
+                <input type="text" class="vb-input" value="Mitchell">
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="vb-form-group">
+                <label class="vb-form-label">Job Title</label>
+                <input type="text" class="vb-input" value="L&D Manager">
+              </div>
+              <div class="vb-form-group">
+                <label class="vb-form-label">Work Email</label>
+                <input type="email" class="vb-input" value="s.mitchell@apexsolutions.com">
+              </div>
+            </div>
+            <button class="btn-vb btn-vb-primary"><i class="ri-save-line"></i> Update Profile</button>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="vb-form-card">
+            <div class="vb-form-card-header"><h3 class="vb-form-card-title">Portal Preferences</h3></div>
+            <div class="vb-form-group">
+              <label class="vb-checkbox-label" for="pref-email-notif">
+                <input type="checkbox" class="vb-checkbox" id="pref-email-notif" checked>
+                <span class="vb-checkbox-text">Email notifications for new sessions</span>
+              </label>
+            </div>
+            <div class="vb-form-group">
+              <label class="vb-checkbox-label" for="pref-weekly-report">
+                <input type="checkbox" class="vb-checkbox" id="pref-weekly-report" checked>
+                <span class="vb-checkbox-text">Weekly training progress summary</span>
+              </label>
+            </div>
+            <div class="vb-form-group">
+              <label class="vb-checkbox-label" for="pref-capacity-alert">
+                <input type="checkbox" class="vb-checkbox" id="pref-capacity-alert" checked>
+                <span class="vb-checkbox-text">Alert when batch is near capacity</span>
+              </label>
+            </div>
+            <div class="vb-form-group">
+              <label class="vb-checkbox-label" for="pref-cert-notif">
+                <input type="checkbox" class="vb-checkbox" id="pref-cert-notif">
+                <span class="vb-checkbox-text">Notify when certificates are ready</span>
+              </label>
+            </div>
+            <button class="btn-vb btn-vb-primary btn-vb-block mt-2"><i class="ri-save-line"></i> Save Preferences</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         SECTION: NOTIFICATIONS
+    =================================================== -->
+    <div class="dash-section" id="section-notifications">
+      <div class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Notifications</h1>
+          <p class="dash-page-subtitle">5 unread notifications</p>
+        </div>
+        <div class="dash-page-actions">
+          <button class="btn-vb btn-vb-ghost" id="btn-mark-all-read"><i class="ri-checkbox-circle-line"></i> Mark All Read</button>
+        </div>
+      </div>
+      <div class="vb-form-card">
+        <div class="d-flex flex-column gap-0">
+          <div style="display:flex; gap:14px; padding:var(--space-4); border-bottom:1px solid var(--border); background:var(--teal-faint);">
+            <div style="width:40px; height:40px; background:var(--teal-faint); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--teal); flex-shrink:0;"><i class="ri-calendar-check-line"></i></div>
+            <div style="flex:1;">
+              <div style="font-weight:600; color:var(--heading); font-size:0.875rem;">Session scheduled: Business English Batch A</div>
+              <div style="font-size:0.8125rem; color:var(--body); margin-top:2px;">Session 7 scheduled for Mon, Sep 22 at 10:00 AM. 13 participants confirmed.</div>
+              <div style="font-size:0.75rem; color:var(--body-muted); margin-top:4px;">2 hours ago</div>
+            </div>
+            <div style="width:8px; height:8px; background:var(--teal); border-radius:50%; margin-top:6px; flex-shrink:0;"></div>
+          </div>
+          <div style="display:flex; gap:14px; padding:var(--space-4); border-bottom:1px solid var(--border); background:var(--teal-faint);">
+            <div style="width:40px; height:40px; background:rgba(192,57,43,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--danger); flex-shrink:0;"><i class="ri-user-unfollow-line"></i></div>
+            <div style="flex:1;">
+              <div style="font-weight:600; color:var(--heading); font-size:0.875rem;">Absence recorded: Fatima Rashid</div>
+              <div style="font-size:0.8125rem; color:var(--body); margin-top:2px;">Fatima Rashid was absent from Business English Session 6 (Sep 18). 2 absences recorded this program.</div>
+              <div style="font-size:0.75rem; color:var(--body-muted); margin-top:4px;">4 hours ago</div>
+            </div>
+            <div style="width:8px; height:8px; background:var(--danger); border-radius:50%; margin-top:6px; flex-shrink:0;"></div>
+          </div>
+          <div style="display:flex; gap:14px; padding:var(--space-4); border-bottom:1px solid var(--border); background:var(--teal-faint);">
+            <div style="width:40px; height:40px; background:rgba(176,123,0,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--warning); flex-shrink:0;"><i class="ri-pie-chart-line"></i></div>
+            <div style="flex:1;">
+              <div style="font-weight:600; color:var(--heading); font-size:0.875rem;">Batch near capacity: BE-2026-A</div>
+              <div style="font-size:0.8125rem; color:var(--body); margin-top:2px;">Business English Batch A now has only 2 seats available. Consider opening a new batch if more enrollments are expected.</div>
+              <div style="font-size:0.75rem; color:var(--body-muted); margin-top:4px;">Yesterday</div>
+            </div>
+            <div style="width:8px; height:8px; background:var(--warning); border-radius:50%; margin-top:6px; flex-shrink:0;"></div>
+          </div>
+          <div style="display:flex; gap:14px; padding:var(--space-4); border-bottom:1px solid var(--border);">
+            <div style="width:40px; height:40px; background:var(--success-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--success); flex-shrink:0;"><i class="ri-award-line"></i></div>
+            <div style="flex:1;">
+              <div style="font-weight:600; color:var(--heading); font-size:0.875rem;">Certificate issued: Samara Petrov</div>
+              <div style="font-size:0.8125rem; color:var(--body); margin-top:2px;">Completion certificate for Leadership Communication has been issued to Samara Petrov (Cert #VB-2026-001).</div>
+              <div style="font-size:0.75rem; color:var(--body-muted); margin-top:4px;">Sep 16</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:14px; padding:var(--space-4);">
+            <div style="width:40px; height:40px; background:var(--teal-faint); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--teal); flex-shrink:0;"><i class="ri-user-add-line"></i></div>
+            <div style="flex:1;">
+              <div style="font-weight:600; color:var(--heading); font-size:0.875rem;">New enrollment: James Owusu</div>
+              <div style="font-size:0.8125rem; color:var(--body); margin-top:2px;">James Owusu has been enrolled in Cross-Cultural Communication (CC-2026-A). Pending confirmation from participant.</div>
+              <div style="font-size:0.75rem; color:var(--body-muted); margin-top:4px;">Sep 13</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.dash-content -->
+</main>
+
+<!-- Sidebar Overlay (mobile) -->
+<div class="vb-overlay sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- Toast Container -->
+<div class="vb-toast-container" id="toast-container" aria-live="polite"></div>
+
+<dialog class="logout-dialog" id="logout-dialog" aria-labelledby="logout-dialog-title">
+  <div class="logout-dialog-icon"><i class="ri-logout-box-r-line"></i></div>
+  <h2 id="logout-dialog-title">Sign out of VerbaBridge?</h2>
+  <p>You will return to the HR portal login screen.</p>
+  <div class="logout-dialog-actions">
+    <button type="button" class="btn-vb btn-vb-ghost" id="logout-cancel">Stay signed in</button>
+    <a class="btn-vb btn-vb-primary" href="hr-login.html" id="logout-confirm">Sign Out</a>
+  </div>
+</dialog>
+
+<script src="js/main.js?v=3"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
+
+
+

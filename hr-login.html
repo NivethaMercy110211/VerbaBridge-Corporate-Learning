@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Portal Login — VerbaBridge Corporate Learning</title>
+  <meta name="description" content="VerbaBridge HR Portal login for corporate L&D and HR managers to access the training dashboard, manage enrollments, track attendance and download reports.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css?v=3">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/dark-theme.css?v=2">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/site-fixes.css?v=37">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+
+<div class="vb-auth-page">
+  <!-- Visual Panel (Left) -->
+  <div class="auth-visual">
+    <div class="auth-visual-bg" style="background-image: url('assets/images/auth/login.jpg');"></div>
+    <div class="auth-visual-overlay"></div>
+    <div class="auth-visual-content">
+      <div>
+        <div class="auth-visual-badge">
+          <i class="ri-shield-check-line"></i> Secure HR Training Portal
+        </div>
+        <h2 class="auth-visual-title">Manage Your Organization's Training From One Place.</h2>
+        <div class="d-flex flex-column gap-3 mt-4">
+          <div class="auth-visual-point"><i class="ri-group-line"></i> Enroll employees and manage batches</div>
+          <div class="auth-visual-point"><i class="ri-calendar-check-line"></i> Track attendance session by session</div>
+          <div class="auth-visual-point"><i class="ri-bar-chart-box-line"></i> Download progress and completion reports</div>
+          <div class="auth-visual-point"><i class="ri-award-line"></i> Issue completion certificates</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Panel (Right) -->
+  <div class="auth-form-panel">
+    <!-- Top controls -->
+    <div class="auth-top-controls">
+      
+      <div class="d-flex gap-2">
+        <button class="vb-theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="ri-moon-line"></i></button>
+        <button class="vb-rtl-toggle" data-rtl-toggle><span>RTL</span></button>
+      </div>
+    </div>
+
+    <div class="auth-form-center auth-login-card">
+      <!-- Logo (visible on mobile when visual panel is hidden) -->
+      <div class="auth-mobile-brand mb-4">
+        <a href="index.html" class="vb-brand" aria-label="VerbaBridge Corporate Learning">
+          <img src="assets/images/logo.png" alt="VerbaBridge Corporate Learning" class="vb-brand-img" height="46">
+        </a>
+      </div>
+      <h1 class="auth-title">Welcome back</h1>
+      <p class="auth-subtitle">Sign in to your HR training portal.</p>
+
+      <form class="auth-form" id="login-form" novalidate>
+        <!-- Work Email -->
+        <div class="vb-form-group">
+          <label class="vb-form-label" for="login-email">Work email</label>
+          <div class="vb-input-group">
+            <i class="ri-mail-line input-icon"></i>
+            <input type="email" class="vb-input" id="login-email" name="email" placeholder="you@company.com" autocomplete="email" required>
+          </div>
+          <div class="vb-form-error" id="email-error"></div>
+        </div>
+
+        <!-- Password -->
+        <div class="vb-form-group">
+          <div class="d-flex align-items-center justify-content-between mb-1">
+            <label class="vb-form-label mb-0" for="login-password">Password</label>
+          </div>
+          <div class="vb-input-group">
+            <i class="ri-lock-line input-icon"></i>
+            <input type="password" class="vb-input" id="login-password" name="password" placeholder="Your password" autocomplete="current-password" required>
+            <button type="button" class="input-trail" id="toggle-password" aria-label="Toggle password visibility">
+              <i class="ri-eye-line" id="toggle-password-icon"></i>
+            </button>
+          </div>
+          <div class="vb-form-error" id="password-error"></div>
+        </div>
+
+        <!-- Remember Me -->
+        <div class="auth-remember-row">
+          <label class="vb-checkbox-label" for="remember-me">
+            <input type="checkbox" class="vb-checkbox" id="remember-me" name="remember">
+            <span class="vb-checkbox-text">Keep me signed in</span>
+          </label>
+          <a href="forgot-password.html" class="auth-form-link" id="btn-forgot-password">Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-vb btn-vb-primary btn-vb-block btn-vb-lg" id="btn-login-submit">
+          Sign In
+        </button>
+
+        <!-- Register Link -->
+      </form>
+      <div class="auth-social">
+        <div class="auth-social-divider"><span>or continue with</span></div>
+        <div class="auth-social-buttons">
+          <button type="button" class="auth-social-button" data-social="Google" aria-label="Continue with Google"><svg class="auth-provider-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.4-.18-2.07H12v3.92h5.38a4.6 4.6 0 0 1-2 3.02v2.54h3.24c1.9-1.75 2.98-4.33 2.98-7.41Z"/><path fill="#34A853" d="M12 22c2.7 0 4.97-.9 6.62-2.36l-3.24-2.54c-.9.6-2.05.96-3.38.96-2.6 0-4.81-1.76-5.6-4.13H3.06v2.62A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 13.93A6.02 6.02 0 0 1 6.09 12c0-.67.11-1.32.31-1.93V7.45H3.06A10 10 0 0 0 2 12c0 1.63.39 3.17 1.06 4.55l3.34-2.62Z"/><path fill="#EA4335" d="M12 5.94c1.47 0 2.79.5 3.83 1.5l2.87-2.87A9.63 9.63 0 0 0 12 2a10 10 0 0 0-8.94 5.45l3.34 2.62C7.19 7.7 9.4 5.94 12 5.94Z"/></svg><span>Google</span></button>
+          <button type="button" class="auth-social-button" data-social="iOS" aria-label="Continue with iOS"><i class="ri-apple-fill auth-icon-apple" aria-hidden="true"></i><span>iOS</span></button>
+          <button type="button" class="auth-social-button" data-social="Facebook" aria-label="Continue with Facebook"><i class="ri-facebook-fill auth-icon-facebook" aria-hidden="true"></i><span>Facebook</span></button>
+        </div>
+        <p class="auth-social-note" role="status" aria-live="polite"></p>
+      </div>
+
+      <p class="auth-switch-text">First time here? <a href="hr-register.html" class="auth-form-link">Create account</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js?v=3"></script>
+<script>
+// Toggle password visibility
+document.getElementById('toggle-password')?.addEventListener('click', function() {
+  const input = document.getElementById('login-password');
+  const icon = document.getElementById('toggle-password-icon');
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.classList.replace('ri-eye-line', 'ri-eye-off-line');
+  } else {
+    input.type = 'password';
+    icon.classList.replace('ri-eye-off-line', 'ri-eye-line');
+  }
+});
+
+// Form submit — demo mode
+document.getElementById('login-form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value.trim();
+  const btn = document.getElementById('btn-login-submit');
+
+  // Clear errors
+  document.getElementById('email-error').textContent = '';
+  document.getElementById('password-error').textContent = '';
+
+  let valid = true;
+  if (!email || !email.includes('@')) {
+    document.getElementById('email-error').textContent = 'Please enter a valid work email address.';
+    valid = false;
+  }
+  if (!password || password.length < 3) {
+    document.getElementById('password-error').textContent = 'Please enter your password.';
+    valid = false;
+  }
+  if (!valid) return;
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="ri-loader-2-line"></i> Signing in...';
+
+  setTimeout(() => {
+    window.location.href = 'dashboard.html';
+  }, 1200);
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
