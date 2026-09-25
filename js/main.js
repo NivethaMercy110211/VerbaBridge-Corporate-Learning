@@ -37,6 +37,17 @@
   ============================================================ */
   function initBackToTop() {
     if (document.querySelector('.vb-back-to-top')) return;
+    // Auth pages and dashboard do not need the scroll-to-top button
+    if (
+      document.querySelector('.vb-auth-page') ||
+      document.querySelector('.auth-form-center') ||
+      document.body.classList.contains('vb-auth-page') ||
+      document.querySelector('.vb-sidebar') ||
+      document.querySelector('.dash-main') ||
+      document.body.classList.contains('vb-dashboard-page')
+    ) {
+      return;
+    }
 
     const button = document.createElement('button');
     button.type = 'button';

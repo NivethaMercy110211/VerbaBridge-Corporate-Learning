@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    VerbaBridge — rtl.css  (v2 — comprehensive)
    RTL (Right-to-Left) layout overrides
    Apply when <html dir="rtl">
@@ -91,6 +91,16 @@
 ============================================================ */
 [dir="rtl"] .vb-input-group .vb-input { padding-left: 14px; padding-right: 40px; }
 [dir="rtl"] .vb-input-group .input-icon { left: auto; right: 14px; }
+[dir="rtl"] .vb-input-group:has(input[type="tel"]) .vb-input {
+  direction: ltr;
+  text-align: right;
+  padding-left: 14px;
+  padding-right: 40px;
+}
+[dir="rtl"] .vb-input-group:has(input[type="tel"]) .input-icon {
+  left: auto;
+  right: 14px;
+}
 [dir="rtl"] .vb-input-group .input-trail { right: auto; left: 10px; }
 [dir="rtl"] .vb-select { background-position: left 12px center; padding-right: 14px; padding-left: 38px; }
 [dir="rtl"] .filter-select-sm { background-position: left 8px center; padding-right: 10px; padding-left: 30px; }
@@ -272,16 +282,124 @@
 [dir="rtl"] .vb-media-badge-card > div { flex-direction: row-reverse; }
 
 /* ============================================================
-   PROGRAM SPEC ROWS
-============================================================ */
-[dir="rtl"] .program-spec-row { flex-direction: row-reverse; }
-[dir="rtl"] .program-spec-row > strong { text-align: right; }
+   PROGRAM DETAIL PAGE RTL FIXES
+   ============================================================ */
+/* 1. Breadcrumbs & Banner */
+[dir="rtl"] .vb-page-banner nav ol {
+  flex-direction: row;
+}
+[dir="rtl"] .vb-page-banner nav ol .ri-arrow-right-s-line {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+[dir="rtl"] .program-hero-meta {
+  flex-direction: row;
+}
+[dir="rtl"] .program-hero-meta-item {
+  flex-direction: row;
+  text-align: right;
+}
+
+/* 2. Overview Callout Cards */
+[dir="rtl"] .overview-callout-teal,
+[dir="rtl"] #overview [style*="border-left:4px solid var(--teal)"],
+[dir="rtl"] #overview [style*="border-left: 4px solid var(--teal)"] {
+  border-left: none !important;
+  border-right: 4px solid var(--teal) !important;
+  text-align: right;
+}
+[dir="rtl"] .overview-callout-navy,
+[dir="rtl"] #overview [style*="border-left:4px solid var(--navy)"],
+[dir="rtl"] #overview [style*="border-left: 4px solid var(--navy)"] {
+  border-left: none !important;
+  border-right: 4px solid var(--navy) !important;
+  text-align: right;
+}
+
+/* 3. Section Navigation Pills */
+[dir="rtl"] .program-section-nav {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* 4. Curriculum & FAQ Accordions in RTL */
+[dir="rtl"] .vb-accordion .accordion-button,
+[dir="rtl"] .accordion .accordion-button {
+  text-align: right;
+  flex-direction: row;
+}
+[dir="rtl"] .vb-accordion .accordion-button::after,
+[dir="rtl"] .accordion .accordion-button::after {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+[dir="rtl"] .vb-accordion .accordion-button .badge,
+[dir="rtl"] .accordion .accordion-button .badge {
+  margin-right: 0 !important;
+  margin-left: 1rem !important;
+}
+[dir="rtl"] .vb-accordion .accordion-body ul,
+[dir="rtl"] .accordion .accordion-body ul {
+  padding-left: 0 !important;
+  padding-right: 1.25rem !important;
+  text-align: right;
+}
+[dir="rtl"] .vb-accordion .accordion-body,
+[dir="rtl"] .accordion .accordion-body {
+  text-align: right;
+}
+
+/* 5. Measurable Outcomes & Faculty Cards */
+[dir="rtl"] #outcomes .d-flex.gap-3,
+[dir="rtl"] #trainers .d-flex.gap-3 {
+  flex-direction: row;
+  text-align: right;
+}
+
+/* 6. Program Sidebar & Specifications */
+[dir="rtl"] .program-detail-sticky {
+  text-align: right;
+}
+[dir="rtl"] .program-spec-row {
+  flex-direction: row !important;
+}
+[dir="rtl"] .program-spec-row .program-spec-label {
+  text-align: right !important;
+}
+[dir="rtl"] .program-spec-row > strong {
+  text-align: left !important;
+}
+[dir="rtl"] .program-detail-sticky ul {
+  padding-left: 0 !important;
+  padding-right: 1.25rem !important;
+  text-align: right;
+}
+
+/* 7. Modal in RTL */
+[dir="rtl"] .modal-header {
+  flex-direction: row;
+  text-align: right;
+}
+[dir="rtl"] .modal-header .btn-close {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+[dir="rtl"] .modal-body {
+  text-align: right;
+}
+[dir="rtl"] .modal-body .vb-form-group {
+  text-align: right;
+}
+[dir="rtl"] .modal-body .vb-form-label {
+  text-align: right;
+  display: block;
+}
 
 /* ============================================================
    MODAL
-============================================================ */
-[dir="rtl"] .vb-modal-header { flex-direction: row-reverse; }
-[dir="rtl"] .vb-modal-footer { justify-content: flex-start; flex-direction: row-reverse; }
+   ============================================================ */
+[dir="rtl"] .vb-modal-header { flex-direction: row; }
+[dir="rtl"] .vb-modal-footer { justify-content: flex-start; flex-direction: row; }
 
 /* ============================================================
    MOBILE OVERRIDES (RTL + small screens)

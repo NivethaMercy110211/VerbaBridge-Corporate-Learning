@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    AUTH.CSS — Authentication pages (Login, Register, Forgot PW)
    VerbaBridge Corporate Learning
 ============================================================ */
@@ -68,8 +68,8 @@
 }
 
 .auth-logo-wrap .vb-brand-img {
-  height: 44px;
-  max-height: 44px;
+  height: 52px;
+  max-height: 52px;
   width: auto;
   display: block;
 }
@@ -79,6 +79,18 @@
   max-height: 60px;
   width: auto;
   display: block;
+}
+
+[data-theme="dark"] .auth-logo-wrap {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .auth-logo-wrap .vb-brand-img,
+[data-theme="dark"] .auth-mobile-brand .vb-brand-img {
+  filter: brightness(0) invert(1);
 }
 
 .auth-visual-badge {
@@ -267,11 +279,16 @@
   color: var(--teal);
   text-decoration: none;
   font-weight: 600;
-  transition: color var(--transition-fast);
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
 }
 
-.auth-form-link:hover {
-  color: var(--navy);
+.auth-form-link:hover,
+.auth-form-link:focus-visible {
+  color: var(--heading);
+  text-decoration: underline;
+  text-decoration-color: var(--teal);
+  text-decoration-thickness: 2px;
 }
 
 /* Input with trail icon (password toggle) */
@@ -561,4 +578,18 @@
   .auth-form-center.auth-login-card {
     padding: 22px 16px;
   }
+}
+
+/* Auth pages do not need the scroll-to-top button */
+.vb-auth-page ~ .vb-back-to-top,
+.vb-auth-page .vb-back-to-top,
+body:has(.vb-auth-page) .vb-back-to-top,
+body:has(.auth-form-center) .vb-back-to-top,
+body.vb-auth-page .vb-back-to-top,
+.auth-login-card ~ .vb-back-to-top,
+.auth-register-page ~ .vb-back-to-top {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
 }

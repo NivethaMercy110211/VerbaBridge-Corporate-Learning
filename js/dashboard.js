@@ -51,7 +51,6 @@
   function initNavigation() {
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
     const sections = document.querySelectorAll('.dash-section');
-    const breadcrumbCurrent = document.getElementById('breadcrumb-current');
     const sidebar = document.getElementById('sidebar');
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebarClose = document.getElementById('sidebar-close');
@@ -83,11 +82,6 @@
           sec.classList.remove('active');
         }
       });
-
-      // Update breadcrumb
-      if (breadcrumbCurrent) {
-        breadcrumbCurrent.textContent = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
-      }
 
       state.activeSection = sectionId;
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -168,8 +162,6 @@
         document.querySelectorAll('.dash-section').forEach(s => {
           s.classList.toggle('active', s.id === `section-${requestedView}`);
         });
-        const bc = document.getElementById('breadcrumb-current');
-        if (bc) bc.textContent = requestedView.charAt(0).toUpperCase() + requestedView.slice(1);
         state.activeSection = requestedView;
       }
     }

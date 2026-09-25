@@ -318,6 +318,11 @@
 .calendar-summary-card { display:flex; align-items:center; gap:12px; min-width:0; padding:14px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg); }
 .calendar-summary-icon { width:40px; height:40px; display:grid; place-items:center; flex:0 0 40px; align-self:center; border-radius:12px; font-size:1.1rem; line-height:1; }.calendar-summary-icon i { display:block; width:1em; height:1em; line-height:1; text-align:center; }
 .calendar-summary-icon.teal { color:var(--teal); background:rgba(45,124,122,.14); }.calendar-summary-icon.navy { color:var(--navy); background:rgba(24,59,86,.14); }.calendar-summary-icon.success { color:var(--success); background:rgba(32,132,81,.14); }.calendar-summary-icon.warning { color:var(--warning); background:rgba(176,123,0,.14); }
+[data-theme="dark"] .calendar-summary-icon.navy {
+  color: #91d9d3;
+  background: rgba(145, 217, 211, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(145, 217, 211, 0.24);
+}
 .calendar-summary-card strong,.calendar-summary-card div>span { display:block; }.calendar-summary-card strong { color:var(--heading); font:800 1.25rem var(--font-heading); line-height:1.1; }.calendar-summary-card div>span { margin-top:4px; color:var(--body-muted); font-size:.72rem; line-height:1.25; }
 .calendar-toolbar { display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); margin-bottom:var(--space-3); padding:12px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg); }
 .calendar-filters { display:flex; align-items:center; gap:8px; }.calendar-filter-search { position:relative; }.calendar-filter-search i { position:absolute; left:11px; top:50%; transform:translateY(-50%); color:var(--body-muted); }.calendar-filter-search input { width:190px; height:36px; padding:0 12px 0 32px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg); color:var(--heading); font:inherit; font-size:.78rem; }

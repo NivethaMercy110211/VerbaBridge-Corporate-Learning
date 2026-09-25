@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css?v=3">
-  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/buttons.css?v=2">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/forms.css">
   <link rel="stylesheet" href="css/programs.css">
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="css/desktop.css">
   <link rel="stylesheet" href="css/tablet.css">
   <link rel="stylesheet" href="css/mobile.css">
-  <link rel="stylesheet" href="css/site-fixes.css?v=36">
+  <link rel="stylesheet" href="css/site-fixes.css?v=39">
   <link rel="stylesheet" href="css/banner-motion.css?v=3">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
@@ -118,8 +118,8 @@
           <li><a href="index.html" style="color:rgba(255,255,255,0.85); text-decoration:none;">Home</a></li>
           <li><i class="ri-arrow-right-s-line"></i></li>
           <li><a href="programs.html" style="color:rgba(255,255,255,0.85); text-decoration:none;">Programs</a></li>
-          <li><i class="ri-arrow-right-s-line"></i></li>
-          <li style="color:#66AAA7;" id="breadcrumb-program-title">Executive Business English</li>
+          <li class="breadcrumb-current-separator"><i class="ri-arrow-right-s-line"></i></li>
+          <li class="breadcrumb-current-program" style="color:#66AAA7;" id="breadcrumb-program-title">Executive Business English</li>
         </ol>
       </nav>
 
@@ -209,13 +209,13 @@
           
           <div class="row g-3 mt-2">
             <div class="col-sm-6">
-              <div class="p-3 rounded" style="background:var(--bg-secondary); border-left:4px solid var(--teal);">
+              <div class="p-3 rounded overview-callout-teal" style="background:var(--bg-secondary); border-left:4px solid var(--teal);">
                 <div class="fw-700 mb-1" style="color:var(--heading);"><i class="ri-user-star-line" style="color:var(--teal);"></i> Who This Is For</div>
                 <div style="font-size:0.875rem; color:var(--body);">Department heads, project managers, technical leads, consultants, and high-potential managers working across global regions.</div>
               </div>
             </div>
             <div class="col-sm-6">
-              <div class="p-3 rounded" style="background:var(--bg-secondary); border-left:4px solid var(--navy);">
+              <div class="p-3 rounded overview-callout-navy" style="background:var(--bg-secondary); border-left:4px solid var(--navy);">
                 <div class="fw-700 mb-1" style="color:var(--heading);"><i class="ri-line-chart-line" style="color:var(--navy);"></i> Enterprise Impact</div>
                 <div style="font-size:0.875rem; color:var(--body);">Reduces communication bottlenecks by 42%, cuts rework from ambiguous briefing, and accelerates cross-region project delivery.</div>
               </div>
@@ -581,9 +581,9 @@
     <div class="vb-cta-inner text-center">
       <h2 class="vb-cta-title">Upskill Your Workforce with VerbaBridge</h2>
       <p class="vb-cta-subtitle">Talk with our enterprise curriculum specialists to design a customized language program aligned with your strategic business targets.</p>
-      <div class="vb-cta-buttons justify-content-center">
-        <a href="contact.html" class="btn-vb btn-vb-teal btn-vb-lg"><i class="ri-calendar-check-line"></i> Book a 20-Min Consultation</a>
-        <a href="dashboard.html" class="btn-vb btn-vb-outline-white btn-vb-lg"><i class="ri-dashboard-line"></i> Explore HR Dashboard</a>
+      <div class="cta-btns vb-cta-buttons justify-content-center">
+        <a href="contact.html" class="btn-vb btn-vb-white btn-vb-xl" id="btn-detail-cta-consult"><i class="ri-calendar-check-line"></i> Book a 20-Min Consultation</a>
+        <a href="dashboard.html" class="btn-vb btn-vb-outline-white btn-vb-xl" id="btn-detail-cta-dash"><i class="ri-dashboard-line"></i> Explore HR Dashboard</a>
       </div>
     </div>
   </div>

@@ -63,6 +63,25 @@
   transform: translateY(0);
 }
 
+/* ---- Outline ---- */
+.btn-vb-outline {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.btn-vb-outline:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 59, 86, 0.2);
+}
+
+.btn-vb-outline:active {
+  transform: translateY(0);
+}
+
 /* ---- Teal ---- */
 .btn-vb-teal {
   background: var(--teal);

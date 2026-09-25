@@ -45,8 +45,8 @@
   background: #91D9D3;
 }
 [data-theme="dark"] .vb-mobile-nav-link:hover {
-  background: rgba(255,255,255,0.06);
-  color: #FFFFFF;
+  background: rgba(102, 170, 167, 0.22) !important;
+  color: #FFFFFF !important;
 }
 [data-theme="dark"] .vb-mobile-nav-link.active {
   background: rgba(102,170,167,0.22) !important;

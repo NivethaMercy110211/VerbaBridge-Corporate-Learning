@@ -41,8 +41,8 @@
 }
 
 .vb-header .vb-brand-img {
-  height: 40px;
-  max-height: 40px;
+  height: 50px;
+  max-height: 50px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -54,10 +54,11 @@
 }
 
 [data-theme="dark"] .vb-header .vb-brand-img {
-  background: #ffffff;
-  padding: 4px 10px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: brightness(0) invert(1);
 }
 
 .vb-brand-text {
@@ -362,14 +363,14 @@
     min-height: calc(var(--header-height) - 16px);
   }
   .vb-header .vb-brand-img {
-    height: 38px;
-    max-height: 38px;
+    height: 44px;
+    max-height: 44px;
   }
 }
 
 @media (max-width: 767px) {
   .vb-header .vb-brand-img {
-    height: 32px;
-    max-height: 32px;
+    height: 38px;
+    max-height: 38px;
   }
 }

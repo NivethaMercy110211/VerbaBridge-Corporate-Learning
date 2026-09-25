@@ -227,16 +227,22 @@
   color: var(--heading);
   text-decoration: none;
   cursor: pointer;
-  transition: background var(--transition-fast), color var(--transition-fast);
+  transition: all var(--transition-fast);
   border: none;
   background: none;
   width: 100%;
   text-align: left;
+  border-radius: var(--radius-md);
 }
 .vmn-group-toggle:hover,
+.vmn-group-toggle:focus-visible,
 .vmn-group.open .vmn-group-toggle {
-  background: var(--bg-secondary);
-  color: var(--navy);
+  background: rgba(45, 124, 122, 0.12) !important;
+  color: var(--teal, #2D7C7A) !important;
+}
+.vmn-group-toggle:hover .vmn-arrow,
+.vmn-group.open .vmn-group-toggle .vmn-arrow {
+  color: var(--teal, #2D7C7A) !important;
 }
 .vmn-group-toggle i:first-child {
   font-size: 1.1rem;
@@ -254,7 +260,7 @@
 .vmn-arrow {
   font-size: 1rem;
   color: var(--body-muted);
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, color var(--transition-fast);
   flex-shrink: 0;
 }
 
@@ -280,16 +286,20 @@
   font-weight: 500;
   color: var(--body);
   text-decoration: none;
-  transition: color var(--transition-fast), background var(--transition-fast);
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-sm);
 }
-.vmn-sub-link:hover {
-  color: var(--navy);
-  background: rgba(24,59,86,0.06);
+.vmn-sub-link:hover,
+.vmn-sub-link:focus-visible {
+  color: var(--teal, #2D7C7A) !important;
+  background: rgba(45, 124, 122, 0.15) !important;
+  font-weight: 600;
+  transform: translateX(4px);
 }
 .vmn-sub-link.active {
   font-weight: 700 !important;
   color: var(--teal) !important;
-  background: rgba(45, 124, 122, 0.15) !important;
+  background: rgba(45, 124, 122, 0.18) !important;
   border-left: 3px solid var(--teal) !important;
 }
 .vmn-sub-link i {
@@ -298,9 +308,20 @@
   flex-shrink: 0;
 }
 
+/* Top-level mobile nav link hover */
+.vb-mobile-nav-link {
+  transition: all var(--transition-fast);
+}
+.vb-mobile-nav-link:hover,
+.vb-mobile-nav-link:focus-visible {
+  background: rgba(45, 124, 122, 0.12) !important;
+  color: var(--teal, #2D7C7A) !important;
+  transform: translateX(4px);
+}
+
 /* Prominent active highlight for top-level mobile nav links */
 .vb-mobile-nav-link.active {
-  background: rgba(45, 124, 122, 0.12) !important;
+  background: rgba(45, 124, 122, 0.14) !important;
   color: var(--teal) !important;
   font-weight: 700 !important;
   border-left: 3.5px solid var(--teal) !important;
@@ -315,7 +336,7 @@
 .vmn-group.has-active > .vmn-group-toggle {
   color: var(--teal) !important;
   font-weight: 700 !important;
-  background: rgba(45, 124, 122, 0.08) !important;
+  background: rgba(45, 124, 122, 0.1) !important;
   border-left: 3.5px solid var(--teal) !important;
   border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
 }
@@ -323,22 +344,77 @@
   color: var(--teal) !important;
 }
 
-/* Dark mode */
-[data-theme="dark"] .vmn-group-toggle { color: var(--heading); }
+/* Dark mode hover & active states */
+[data-theme="dark"] .vmn-group-toggle { color: var(--heading, #E2E8F0); }
 [data-theme="dark"] .vmn-group-toggle:hover,
-[data-theme="dark"] .vmn-group.open .vmn-group-toggle { background: rgba(255,255,255,0.06); }
+[data-theme="dark"] .vmn-group-toggle:focus-visible,
+[data-theme="dark"] .vmn-group.open .vmn-group-toggle {
+  background: rgba(102, 170, 167, 0.22) !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .vmn-group-toggle:hover .vmn-arrow,
+[data-theme="dark"] .vmn-group.open .vmn-group-toggle .vmn-arrow {
+  color: #A8D5D3 !important;
+}
 [data-theme="dark"] .vmn-submenu { background: rgba(255,255,255,0.04); }
-[data-theme="dark"] .vmn-sub-link:hover { background: rgba(255,255,255,0.08); }
+[data-theme="dark"] .vmn-sub-link { color: #CBD5E1; }
+[data-theme="dark"] .vmn-sub-link:hover,
+[data-theme="dark"] .vmn-sub-link:focus-visible {
+  background: rgba(102, 170, 167, 0.25) !important;
+  color: #FFFFFF !important;
+}
+[data-theme="dark"] .vb-mobile-nav-link { color: var(--heading, #E2E8F0); }
+[data-theme="dark"] .vb-mobile-nav-link:hover,
+[data-theme="dark"] .vb-mobile-nav-link:focus-visible {
+  background: rgba(102, 170, 167, 0.22) !important;
+  color: #FFFFFF !important;
+}
 [data-theme="dark"] .vb-mobile-nav-link.active,
 [data-theme="dark"] .vmn-group-toggle.active,
 [data-theme="dark"] .vmn-group.has-active > .vmn-group-toggle {
-  background: rgba(102, 170, 167, 0.18) !important;
-  color: var(--teal-light, #66AAA7) !important;
+  background: rgba(102, 170, 167, 0.2) !important;
+  color: #A8D5D3 !important;
   border-left-color: var(--teal-light, #66AAA7) !important;
 }
 [data-theme="dark"] .vmn-sub-link.active {
-  background: rgba(102, 170, 167, 0.22) !important;
-  color: var(--teal-light, #66AAA7) !important;
+  background: rgba(102, 170, 167, 0.25) !important;
+  color: #A8D5D3 !important;
   border-left-color: var(--teal-light, #66AAA7) !important;
 }
 
+/* Keep every responsive navigation row aligned to the same RTL edge. */
+[dir="rtl"] .vmn-group-toggle,
+[dir="rtl"] .vmn-group-toggle .vmn-label,
+[dir="rtl"] .vmn-sub-link,
+[dir="rtl"] .vb-mobile-nav-link {
+  text-align: right;
+}
+
+[dir="rtl"] .vmn-submenu {
+  border-left: 0;
+  border-right: 3px solid var(--teal);
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+[dir="rtl"] .vb-mobile-nav-link.active,
+[dir="rtl"] .vmn-group-toggle.active,
+[dir="rtl"] .vmn-group.has-active > .vmn-group-toggle,
+[dir="rtl"] .vmn-sub-link.active {
+  border-left: 0 !important;
+  border-right: 3.5px solid var(--teal) !important;
+  border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
+}
+
+[dir="rtl"][data-theme="dark"] .vb-mobile-nav-link.active,
+[dir="rtl"][data-theme="dark"] .vmn-group-toggle.active,
+[dir="rtl"][data-theme="dark"] .vmn-group.has-active > .vmn-group-toggle,
+[dir="rtl"][data-theme="dark"] .vmn-sub-link.active {
+  border-right-color: var(--teal-light, #66AAA7) !important;
+}
+
+[dir="rtl"] .vb-mobile-nav-link:hover,
+[dir="rtl"] .vb-mobile-nav-link:focus-visible,
+[dir="rtl"] .vmn-sub-link:hover,
+[dir="rtl"] .vmn-sub-link:focus-visible {
+  transform: translateX(-4px) !important;
+}
