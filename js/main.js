@@ -238,7 +238,7 @@
       menu.classList.add('visible');
       requestAnimationFrame(() => menu.classList.add('open'));
       if (overlay) overlay.classList.add('visible');
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('mobile-menu-open');
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'Close menu');
       menu.setAttribute('aria-hidden', 'false');
@@ -255,7 +255,7 @@
     function closeMenu() {
       menu.classList.remove('open');
       if (overlay) overlay.classList.remove('visible');
-      document.body.style.overflow = '';
+      document.body.classList.remove('mobile-menu-open');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Open menu');
       menu.setAttribute('aria-hidden', 'true');
