@@ -176,6 +176,15 @@
       const label = btn.querySelector('span');
       if (label) label.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
     });
+
+    // Direction changes can preserve a browser-specific horizontal scroll
+    // offset. Reset that axis so RTL never appears enlarged or shifted.
+    document.documentElement.scrollLeft = 0;
+    document.body.scrollLeft = 0;
+    window.requestAnimationFrame(() => {
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
+    });
   }
 
   /* ============================================================

@@ -2,6 +2,16 @@
 html,
 body {
   min-width: 320px;
+  max-width: 100%;
+}
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .vb-container,
@@ -4535,6 +4545,138 @@ body.vb-dashboard-page .vb-back-to-top {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+/* Form-card rhythm: keep headings, labels, and controls from crowding each
+   other throughout the dashboard and other shared form-card layouts. */
+.vb-form-card-header {
+  margin-bottom: 18px;
+}
+
+.vb-form-card-title {
+  margin: 0;
+}
+
+.vb-form-label {
+  display: block;
+  margin: 0 0 8px;
+  padding-top: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--heading);
+}
+
+/* Programs listing: avoid an oversized empty band between the page banner
+   and the filters at tablet widths. */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  #programs-list {
+    padding-top: 40px;
+    padding-bottom: 64px;
+  }
+}
+
+/* Dashboard drawer: the close control is visible through 1199px, so reserve
+   logo space and mirror the control for RTL across that entire breakpoint. */
+@media (max-width: 1199.98px) {
+  body .vb-sidebar ~ .vb-dash-main,
+  body .vb-sidebar.collapsed ~ .vb-dash-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+  }
+
+  .vb-dash-main > .dash-topbar {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .vb-sidebar:not(.mobile-open) {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  [dir="ltr"] .vb-sidebar:not(.mobile-open) {
+    transform: translateX(-100%) !important;
+  }
+
+  [dir="rtl"] .vb-sidebar:not(.mobile-open) {
+    transform: translateX(100%) !important;
+  }
+
+  .vb-sidebar.mobile-open {
+    visibility: visible;
+    pointer-events: auto;
+    margin: 0 !important;
+  }
+
+  [dir="ltr"] .vb-sidebar.mobile-open {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  [dir="rtl"] .vb-sidebar.mobile-open {
+    left: auto !important;
+    right: 0 !important;
+    box-shadow: var(--sidebar-collapsed) 0 0 var(--navy), -12px 0 28px rgba(15, 23, 42, 0.22);
+  }
+
+  body.sidebar-drawer-open .sidebar-drawer-toggle {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .vb-sidebar .sidebar-brand {
+    padding-right: 58px;
+  }
+
+  [dir="rtl"] .vb-sidebar .sidebar-mobile-close {
+    right: auto;
+    left: 12px;
+  }
+
+  [dir="rtl"] .vb-sidebar .sidebar-brand {
+    padding-right: var(--space-4);
+    padding-left: 58px;
+  }
+}
+
+/* Site-wide light-theme icon contrast.
+   Some image cards set their floating icon background to --bg-card inline,
+   which otherwise makes the icon container disappear against a white card. */
+html[data-theme="light"] .delivery-card-icon,
+html[data-theme="light"] .solution-icon,
+html[data-theme="light"] .outcome-icon {
+  color: #1f6f6d !important;
+  background: #e8f5f5 !important;
+  border: 1px solid #9bcac8 !important;
+  box-shadow: 0 3px 10px rgba(24, 59, 86, 0.12);
+}
+
+html[data-theme="light"] .stat-card-icon.teal,
+html[data-theme="light"] .report-card-icon.teal {
+  color: #1f6f6d !important;
+  background: #e8f5f5 !important;
+  border: 1px solid #9bcac8 !important;
+}
+
+html[data-theme="light"] .stat-card-icon.navy,
+html[data-theme="light"] .report-card-icon.navy {
+  color: #183b56 !important;
+  background: #e6eef3 !important;
+  border: 1px solid #afc4d2 !important;
+}
+
+html[data-theme="light"] .stat-card-icon.success,
+html[data-theme="light"] .report-card-icon.success {
+  border: 1px solid #9bd2b0 !important;
+}
+
+html[data-theme="light"] .stat-card-icon.warning,
+html[data-theme="light"] .report-card-icon.warning {
+  border: 1px solid #dfc47f !important;
 }
 
 .delivery-formats-grid .delivery-compare-card > .p-4 {

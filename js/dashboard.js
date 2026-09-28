@@ -145,7 +145,7 @@
       }
     });
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024) closeMobileSidebar();
+      if (window.innerWidth >= 1200) closeMobileSidebar();
     });
 
   }
