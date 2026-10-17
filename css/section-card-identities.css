@@ -1,0 +1,228 @@
+/* Distinct card identities for the About page sections. */
+
+/* Philosophy: editorial cards with a numbered corner and soft image treatment. */
+.about-outcomes-grid { counter-reset: principle; }
+
+.about-outcomes-grid > [class*="col-"] { counter-increment: principle; }
+
+.about-outcomes-grid .outcome-card {
+  position: relative;
+  border: 0;
+  border-radius: 8px 28px 8px 28px;
+  box-shadow: 0 12px 30px rgba(24, 59, 86, .1);
+  background: linear-gradient(145deg, #fff 0%, #f6fbfb 100%);
+}
+
+.about-outcomes-grid .outcome-card::after {
+  content: "0" counter(principle);
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 3;
+  font: 800 .72rem/1 var(--font-heading, 'Manrope', sans-serif);
+  letter-spacing: .08em;
+  color: #fff;
+  background: rgba(24, 59, 86, .88);
+  padding: 7px 9px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.about-outcomes-grid .card-top-media {
+  height: 176px;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+.about-outcomes-grid .card-top-media img {
+  filter: saturate(.86);
+  transition: transform .5s ease, filter .5s ease;
+}
+
+.about-outcomes-grid .outcome-card:hover .card-top-media img {
+  transform: scale(1.055);
+  filter: saturate(1.05);
+}
+
+.about-outcomes-grid .outcome-icon {
+  border-radius: 50% !important;
+  outline: 5px solid var(--bg-card, #fff);
+}
+
+.about-outcomes-grid .outcome-title { letter-spacing: -.025em; }
+
+/* Industries: structured dossier cards with a strong left rail and diamond icon. */
+.about-industries-grid .solution-card {
+  position: relative;
+  border: 1px solid #d6e0e7;
+  border-left: 6px solid #183b56;
+  border-radius: 4px 18px 18px 4px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, .07);
+}
+
+.about-industries-grid .solution-card::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(225deg, rgba(45, 124, 122, .14), transparent 68%);
+  pointer-events: none;
+}
+
+.about-industries-grid .card-top-media {
+  height: 190px;
+  border-radius: 0 16px 0 0;
+}
+
+.about-industries-grid .card-top-media img {
+  transition: transform .45s ease;
+}
+
+.about-industries-grid .solution-card:hover {
+  transform: translateX(4px);
+  border-left-color: #2d7c7a;
+}
+
+.about-industries-grid .solution-card:hover .card-top-media img { transform: scale(1.045); }
+
+.about-industries-grid .solution-icon {
+  border-radius: 10px 2px 10px 2px !important;
+  transform: rotate(45deg);
+  background: #2d7c7a !important;
+}
+
+.about-industries-grid .solution-icon i { transform: rotate(-45deg); }
+
+.about-industries-grid .solution-title {
+  color: #183b56;
+  text-transform: uppercase;
+  letter-spacing: .035em;
+}
+
+@media (max-width: 767px) {
+  .about-outcomes-grid .outcome-card { border-radius: 8px 22px 8px 22px; }
+  .about-industries-grid .solution-card:hover { transform: translateY(-4px); }
+}
+
+[data-theme="dark"] .about-outcomes-grid .outcome-card {
+  background: linear-gradient(145deg, #202c32 0%, #19262c 100%) !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, .3);
+}
+
+[data-theme="dark"] .about-outcomes-grid .outcome-icon { outline-color: #202c32; }
+
+[data-theme="dark"] .about-industries-grid .solution-card {
+  background: #1e2a32 !important;
+  border-color: #34434a;
+  border-left-color: #66aaa7;
+}
+
+[data-theme="dark"] .about-outcomes-grid .outcome-title,
+[data-theme="dark"] .about-industries-grid .solution-title { color: #f5f8f9; }
+
+@media (prefers-reduced-motion: reduce) {
+  .about-outcomes-grid .card-top-media img,
+  .about-industries-grid .card-top-media img { transition: none; }
+}
+
+/* Case-study benchmarks: staged card, icon and accent-line entrance. */
+#impact-benchmarks .stat-card {
+  opacity: 0;
+  transform: translateY(24px) scale(.96);
+}
+
+#impact-benchmarks.metrics-visible .stat-card {
+  animation: metric-card-rise .7s var(--metric-delay, 0ms) var(--motion-ease, ease) forwards;
+}
+
+#impact-benchmarks .stat-card::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+#impact-benchmarks.metrics-visible .stat-card::after {
+  transform: scaleX(1);
+  transition: transform .65s calc(var(--metric-delay, 0ms) + 180ms) var(--motion-ease, ease);
+}
+
+#impact-benchmarks.metrics-visible .stat-card-icon {
+  animation: metric-icon-pop .55s calc(var(--metric-delay, 0ms) + 130ms) cubic-bezier(.2, .9, .3, 1.35) both;
+}
+
+#impact-benchmarks .stat-value { font-variant-numeric: tabular-nums; }
+
+@keyframes metric-card-rise {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes metric-icon-pop {
+  from { opacity: 0; transform: scale(.55) rotate(-10deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #impact-benchmarks .stat-card,
+  #impact-benchmarks.metrics-visible .stat-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  #impact-benchmarks.metrics-visible .stat-card-icon { animation: none; }
+}
+/* Home impact strip: staggered tile, icon and ambient sweep motion. */
+.home-impact-section { position: relative; }
+
+.home-impact-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 20%, rgba(141, 232, 226, .09) 48%, transparent 76%);
+  transform: translateX(-115%);
+}
+
+.home-impact-section.impact-visible::after {
+  animation: home-impact-sweep 1.4s .15s var(--motion-ease, ease) both;
+}
+
+.home-impact-section .home-impact-item {
+  opacity: 0;
+  transform: translateY(28px) scale(.95);
+}
+
+.home-impact-section.impact-visible .home-impact-item {
+  animation: home-impact-rise .72s var(--impact-delay, 0ms) var(--motion-ease, ease) forwards;
+}
+
+.home-impact-section.impact-visible .home-impact-icon {
+  animation: home-impact-icon .58s calc(var(--impact-delay, 0ms) + 150ms) cubic-bezier(.2, .9, .3, 1.35) both;
+}
+
+.home-impact-value { font-variant-numeric: tabular-nums; }
+
+@keyframes home-impact-rise {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes home-impact-icon {
+  from { opacity: 0; transform: scale(.55) rotate(-12deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes home-impact-sweep {
+  to { transform: translateX(115%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-impact-section .home-impact-item,
+  .home-impact-section.impact-visible .home-impact-item {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .home-impact-section.impact-visible .home-impact-icon,
+  .home-impact-section.impact-visible::after { animation: none; }
+}

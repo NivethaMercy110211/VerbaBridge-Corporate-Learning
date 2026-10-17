@@ -1,0 +1,47 @@
+/* Viewport motion for section headings, grid items, and footer groups. */
+.reveal {
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed { will-change: auto; }
+.reveal--heading { transform: translate3d(0, 26px, 0); }
+.reveal--card { transform: translate3d(0, 22px, 0) scale(.985); }
+.reveal--card.revealed { transform: translate3d(0, 0, 0) scale(1); }
+.reveal--footer { transform: translate3d(0, 20px, 0); }
+
+.footer-motion {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-motion::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .045) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 1.1s var(--motion-ease);
+}
+
+.footer-motion:has(.reveal--footer.revealed)::before { transform: translateX(100%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.revealed {
+    transition-delay: 0ms;
+    will-change: auto;
+  }
+
+  .footer-motion::before { display: none; }
+}
+
+/* Preserve readable card headings when the dark theme is active. */
+[data-theme="dark"] .about-outcomes-grid .outcome-title {
+  color: #F5F8F9;
+}
+
+[data-theme="dark"] .about-industries-grid .solution-title {
+  color: #F5F8F9;
+}

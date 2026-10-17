@@ -24,6 +24,9 @@
     initMobileMenu();
     initMobileNavAccordion();
     initBannerAnimations();
+    preparePageAnimations();
+    initImpactBenchmarks();
+    initHomeImpact();
     initScrollReveal();
     initAccordions();
     initToasts();
@@ -313,12 +316,162 @@
   /* ============================================================
      SCROLL REVEAL
   ============================================================ */
+  function initHomeImpact() {
+    const section = document.querySelector('.home-impact-section');
+    if (!section) return;
+
+    const items = Array.from(section.querySelectorAll('.home-impact-item'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    items.forEach((item, index) => {
+      item.style.setProperty('--impact-delay', `${index * 130}ms`);
+      const value = item.querySelector('.home-impact-value');
+      if (value) value.dataset.finalValue = value.textContent.trim();
+    });
+
+    const showImpact = () => {
+      section.classList.add('impact-visible');
+      if (reduceMotion) return;
+
+      items.forEach((item, index) => {
+        const value = item.querySelector('.home-impact-value');
+        if (!value || value.dataset.counted === 'true') return;
+        value.dataset.counted = 'true';
+        const finalText = value.dataset.finalValue;
+        const target = Number.parseInt(finalText.replace(/[^0-9]/g, ''), 10);
+        const suffix = finalText.endsWith('+') ? '+' : finalText.includes('%') ? '%' : '';
+        const startTime = performance.now() + (index * 130);
+
+        const tick = now => {
+          if (now < startTime) {
+            requestAnimationFrame(tick);
+            return;
+          }
+          const progress = Math.min((now - startTime) / 950, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          value.textContent = `${Math.round(target * eased).toLocaleString()}${suffix}`;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    };
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      showImpact();
+      return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      showImpact();
+      observer.disconnect();
+    }, { threshold: .28 });
+
+    observer.observe(section);
+  }
+  function initImpactBenchmarks() {
+    const section = document.querySelector('#impact-benchmarks');
+    if (!section) return;
+
+    const cards = Array.from(section.querySelectorAll('.stat-card'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    cards.forEach((card, index) => {
+      card.style.setProperty('--metric-delay', `${index * 110}ms`);
+      const value = card.querySelector('.stat-value');
+      if (value) value.dataset.finalValue = value.textContent.trim();
+    });
+
+    const revealMetrics = () => {
+      section.classList.add('metrics-visible');
+      if (reduceMotion) return;
+
+      cards.forEach((card, index) => {
+        const value = card.querySelector('.stat-value');
+        if (!value || value.dataset.counted === 'true') return;
+        value.dataset.counted = 'true';
+        const finalText = value.dataset.finalValue;
+        const target = Number.parseInt(finalText.replace(/[^0-9]/g, ''), 10);
+        const prefix = finalText.startsWith('+') ? '+' : finalText.startsWith('-') ? '-' : '';
+        const suffix = finalText.includes('%') ? '%' : '';
+        const startTime = performance.now() + (index * 110);
+
+        const tick = now => {
+          if (now < startTime) {
+            requestAnimationFrame(tick);
+            return;
+          }
+          const progress = Math.min((now - startTime) / 850, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          value.textContent = `${prefix}${Math.round(target * eased)}${suffix}`;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    };
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealMetrics();
+      return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      revealMetrics();
+      observer.disconnect();
+    }, { threshold: .22 });
+
+    observer.observe(section);
+  }
+  function preparePageAnimations() {
+    if (
+      document.querySelector('.vb-sidebar, .dash-main, .vb-auth-page, .auth-form-center') ||
+      document.body.classList.contains('vb-dashboard-page')
+    ) return;
+
+    const addReveal = (element, type, delay = 0) => {
+      if (!element || element.classList.contains('reveal')) return;
+      element.classList.add('reveal', `reveal--${type}`);
+      element.dataset.delay = String(delay);
+    };
+
+    document.querySelectorAll('main section, body > section').forEach(section => {
+      const heading = section.querySelector(':scope > .vb-container > .section-header, :scope > .vb-container > .text-center, :scope > .container > .section-header, :scope > .container > .text-center');
+      if (heading && heading.querySelector('h1, h2, h3, .section-title')) {
+        addReveal(heading, 'heading');
+      } else {
+        addReveal(section.querySelector('h2.section-title, .section-header, .vb-section-title'), 'heading');
+      }
+    });
+
+    document.querySelectorAll('.programs-grid, .cs-grid, .case-grid, .stats-grid, .outcomes-grid, .delivery-grid, .solutions-grid, .team-grid, .values-grid, .row').forEach(grid => {
+      Array.from(grid.children).forEach((item, index) => {
+        if (item.matches('script, style, [hidden]')) return;
+        if (!item.classList.contains('reveal')) item.classList.add('reveal', 'reveal--card');
+        if (!item.dataset.delay) item.dataset.delay = String(Math.min(index % 4, 3) * 70);
+      });
+    });
+
+    const footer = document.querySelector('.vb-footer, footer');
+    if (footer) {
+      footer.classList.add('footer-motion');
+      footer.querySelectorAll('.footer-brand, .footer-col, .footer-column, .footer-bottom > *').forEach((group, index) => {
+        addReveal(group, 'footer', Math.min(index, 5) * 65);
+      });
+    }
+  }
+
   function initScrollReveal() {
     const elements = document.querySelectorAll('.reveal');
     if (!elements.length) return;
 
+    elements.forEach(element => {
+      const delay = Math.max(0, Math.min(Number(element.dataset.delay) || 0, 420));
+      element.style.setProperty('--reveal-delay', `${delay}ms`);
+    });
+
     // Reduce motion: reveal immediately
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
       elements.forEach(el => el.classList.add('revealed'));
       return;
     }
@@ -334,17 +487,6 @@
 
     elements.forEach((element) => observer.observe(element));
 
-    // A restored scroll position can leave off-screen elements outside the
-    // observer's first intersection pass. Never allow decorative reveal
-    // animation state to keep real page content permanently hidden.
-    setTimeout(() => {
-      elements.forEach((element) => {
-        if (!element.classList.contains('revealed')) {
-          element.classList.add('revealed');
-          observer.unobserve(element);
-        }
-      });
-    }, 700);
   }
 
   /* ============================================================

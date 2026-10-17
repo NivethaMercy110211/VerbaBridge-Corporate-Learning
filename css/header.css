@@ -105,6 +105,11 @@
 }
 
 .vb-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  box-sizing: border-box;
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
@@ -221,6 +226,14 @@
 
 .vb-header-actions .btn-vb {
   padding-block: 0;
+  line-height: 1;
+}
+
+.vb-header-actions .btn-vb i,
+.vb-header-actions .vb-theme-toggle i {
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 /* ---- Theme Toggle ---- */
 .vb-theme-toggle,
